@@ -4,7 +4,7 @@ import { Header } from "./navigation/Header";
 import { Route, Routes } from "react-router-dom";
 import { LandingPage } from "./landingPage/LandingPage";
 import { RoverSelectorPage } from "./roverSelector/RoverSelectorPage";
-import {QuizPage} from "./quizPage/QuizPage"
+import { QuizPage } from "./quiz/QuizPage"
 
 const App: React.FunctionComponent = () => {
   return (
