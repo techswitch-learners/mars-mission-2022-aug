@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Opportunity: React.FunctionComponent = () => {
+export const OpportunityMap: React.FunctionComponent = () => {
   return (
     <div>
         MapSelector
