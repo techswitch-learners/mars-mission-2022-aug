@@ -5,6 +5,7 @@ export const Navbar: React.FunctionComponent = () => {
   return <nav>
     <ul>
       <li><Link to="/">Home</Link></li>
+      <li><Link to="/quiz">Quiz</Link></li>
     </ul>
   </nav>;
 };
