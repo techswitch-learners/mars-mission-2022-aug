@@ -1,9 +1,9 @@
 import React from "react";
 
 export const RoverSelectorPage: React.FunctionComponent = () => {
-    return (
-      <main>
-        hello
-      </main>
-    );
-  };
+  return (
+    <main>
+      hello
+    </main>
+  );
+};

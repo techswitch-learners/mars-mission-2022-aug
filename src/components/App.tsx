@@ -5,7 +5,6 @@ import { Route, Routes } from "react-router-dom";
 import { LandingPage } from "./landingPage/LandingPage";
 import { RoverSelectorPage } from "./roverSelector/RoverSelectorPage";
 
-
 const App: React.FunctionComponent = () => {
   return (
     <>
