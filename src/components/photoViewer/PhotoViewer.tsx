@@ -1,7 +1,10 @@
 import React from 'react'
 
-export default function PhotoViewer() {
-  return (
-    <div>PhotoViewer</div>
-  )
-}
+export const PhotoViewer: React.FunctionComponent = () => {
+    return (
+      <div>
+        PhotoViewer
+      </div>
+    );
+  };
+  
