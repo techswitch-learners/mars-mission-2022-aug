@@ -11,7 +11,7 @@ const App: React.FunctionComponent = () => {
       <Header />
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/funfactpage" element={<FunFactPage />} />
+        <Route path="/fun-facts" element={<FunFactPage />} />
       </Routes>
     </>
   );
