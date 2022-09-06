@@ -8,4 +8,3 @@ export const FunFactPage: React.FunctionComponent = () => {
       </main>
     );
   };
-  
