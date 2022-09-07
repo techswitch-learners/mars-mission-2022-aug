@@ -3,5 +3,32 @@
 }
 
 .expanded {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    align-items: center;
+    background-color: aqua;
+    padding: 10px;
+    flex: 1 1 200px;
+    gap: 5px;
+
+    img {
+        width: 100%;
+    }
+    button {
+        width: 100%;
+        background-color: white;
+        border-width: 0;
+        outline: solid 1px black;
+        padding: 5px;
+        cursor: pointer;
+        transition: border-color 0.25s;
+
+        &:hover {
+            background-color: orangered;
+            outline: solid 2px orange; 
+        }
+    }
 }
