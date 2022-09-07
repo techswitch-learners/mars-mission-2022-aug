@@ -19,7 +19,7 @@ export const Navbar: React.FunctionComponent = () => {
     <div id="menuToggle">
       <button onClick = {() => toggleMenu()}>
       
-        <span></span>
+        <span ></span>
         <span></span>
         <span></span>
 
