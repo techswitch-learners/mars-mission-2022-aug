@@ -5,7 +5,7 @@ interface User {
   displayPic: string | null;
 }
 
-export const UserDetails: React.FunctionComponent = ({status,setStatus}: any) => {
+export const UserDetailsForm: React.FunctionComponent = ({status,setStatus}: any) => {
 
   const [userDetails, setUserDetails] = useState<User>({
     name: null,
@@ -14,7 +14,7 @@ export const UserDetails: React.FunctionComponent = ({status,setStatus}: any) =>
   
 
   function onSubmit(event: any) {    
-    event.preventDefault();
+    event.preventDefault();     
     setStatus(true);   
   }
 
@@ -22,7 +22,7 @@ export const UserDetails: React.FunctionComponent = ({status,setStatus}: any) =>
     <div>
    
       <form action="post">
-        <div>
+        <div className="name">
           <label> Name: </label>
           <input
             name="Name"
@@ -33,11 +33,10 @@ export const UserDetails: React.FunctionComponent = ({status,setStatus}: any) =>
           />
         </div>
 
-        <div>
+        <div className="displayPic">
           <label> Display pic : </label>
           <input
-            type="text"
-            value="enter a url of an image"
+            type="text"           
             onChange={(e) =>
               setUserDetails({ ...userDetails, displayPic: e.target.value })
             }
@@ -54,7 +53,6 @@ export const UserDetails: React.FunctionComponent = ({status,setStatus}: any) =>
         </button>
 
       </form>
-      //set the state with the UserDetails
     </div>
   );
 };

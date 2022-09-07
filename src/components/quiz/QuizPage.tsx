@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { QuizQuestions } from "./QuizQuestions";
-import { UserDetails } from "./UserDetails";
+import { UserDetailsForm } from "./UserDetailsForm";
 import { Reward } from "./Reward";
 
 interface Stat{
@@ -11,14 +11,13 @@ export const QuizPage: React.FunctionComponent = () => {
 
   const [userStatus, setUserStatus] = useState(false);
  
-  if (userStatus===false) {
-    return <UserDetails status={userStatus} setStatus={setUserStatus} />;
+  if (userStatus===false) { 
+    return <UserDetailsForm status={userStatus} setStatus={setUserStatus} />;
   } else {
+   
     return <QuizQuestions />
   }
    return <Reward />
-  // if () {
-  //   return  <Reward />
-  // }      
+    
    
 };
