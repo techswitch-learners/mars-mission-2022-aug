@@ -1,10 +1,9 @@
-import React from 'react'
+import React from "react";
 
 export const PhotoViewer: React.FunctionComponent = () => {
-    return (
-      <div>
-        PhotoViewer
-      </div>
-    );
-  };
-  
+  return (
+    <div>
+      PhotoViewer
+    </div>
+  );
+};
