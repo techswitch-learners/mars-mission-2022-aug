@@ -1,13 +1,33 @@
+@import "../../constants.scss";
+
 .headline-image
 {
     width: 100%;
 }
 
-.landing-page-buttons
+.landing-page-button-menu
 {
     height:100px; //feel like this should be changed to be more responsive - is it a site wide question for everyone?
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+}
+
+.landing-page-button
+{
+  width: 250px;
+  height: 35px;
+  margin: 10px;
+  font-size: 22px;
+  color: white;
+  text-align: center;
+  background: $primary;
+  border: 0;
+  cursor: pointer;
+
+  &:hover
+  {
+    background: $secondary;
+  } 
 }
