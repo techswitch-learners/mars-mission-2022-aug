@@ -20,6 +20,7 @@ export const UserDetailsForm: React.FunctionComponent = ({status,setStatus}: any
 
   return (
     <div>
+      <h2>Enter your details cadet !</h2>
    
       <form action="post">
         <div className="name">
