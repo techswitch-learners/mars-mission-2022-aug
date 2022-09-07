@@ -1,10 +1,5 @@
-// *{
-//     border: 2px solid red;
-// }
-
-main{
-   
-    position:relative;
+.map-container {
+    position: relative;
 }
 
 .map img {
@@ -13,7 +8,7 @@ main{
     height: auto;
 }
 
-#Curiosity-day-1{
+#Curiosity-day-1 {
     position: absolute;
     top: 8%;
     left: 55%;
