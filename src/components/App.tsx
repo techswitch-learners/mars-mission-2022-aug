@@ -5,7 +5,8 @@ import { Route, Routes } from "react-router-dom";
 import { LandingPage } from "./landingPage/LandingPage";
 import { FunFactPage } from "./funFacts/FunFactPage";
 import { RoverSelectorPage } from "./roverSelector/RoverSelectorPage";
-import { QuizPage } from "./quiz/QuizPage"
+import { QuizPage } from "./quiz/QuizPage";
+import { CuriosityMap } from "./map/CuriosityMap";
 
 const App: React.FunctionComponent = () => {
   return (
@@ -14,7 +15,9 @@ const App: React.FunctionComponent = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/fun-facts" element={<FunFactPage />} />
-        <Route path="/rovers" element={<RoverSelectorPage />} />
+        <Route path="/rovers" element={<RoverSelectorPage />}/>
+        <Route path="/curiosity" element={<CuriosityMap />}/>
+      
         <Route path="/quiz" element={<QuizPage />} />
       </Routes>
     </>
