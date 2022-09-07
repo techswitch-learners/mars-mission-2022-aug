@@ -25,10 +25,10 @@ export const Navbar: React.FunctionComponent = () => {
       </button>
       
         <ul className = {`menu ${isExpanded ? "expanded" : "collapsed"}`}>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/rovers">Explore Mars</Link></li>
-          <li><Link to="/fun-facts">Fun Facts</Link></li>
-          <li><Link to="/quiz">Test Your Knowledge</Link></li>
+          <li onClick = {() => toggleMenu()}><Link to="/">Home</Link></li>
+          <li onClick = {() => toggleMenu()}><Link to="/rovers">Explore Mars</Link></li>
+          <li onClick = {() => toggleMenu()}><Link to="/fun-facts">Fun Facts</Link></li>
+          <li onClick = {() => toggleMenu()}><Link to="/quiz">Test Your Knowledge</Link></li>
         </ul>
     </div>
   </nav>;
