@@ -1,15 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { QuizQuestions } from "./QuizQuestions";
 import { UserDetails } from "./UserDetails";
 import { Reward } from "./Reward";
 
+interface Stat{
+  userStatus: boolean;
+}
+
 export const QuizPage: React.FunctionComponent = () => {
-  return (
-    <div>
-      <h1>This is the Quiz Component</h1>
-      <UserDetails />
-      <QuizQuestions />
-      <Reward />
-    </div>
-  );
+
+  const [userStatus, setUserStatus] = useState(false);
+ 
+  if (userStatus===false) {
+    return <UserDetails status={userStatus} setStatus={setUserStatus} />;
+  } else {
+    return <QuizQuestions />
+  }
+   return <Reward />
+  // if () {
+  //   return  <Reward />
+  // }      
+   
 };

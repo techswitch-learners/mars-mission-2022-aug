@@ -1,27 +1,60 @@
 import React, { useState } from "react";
 
 interface User {
-  name: string;
-  displayPic: string;
+  name: string | null;
+  displayPic: string | null;
 }
 
-export const UserDetails: React.FunctionComponent = () => {
-  [userDetails, setUSerDetails] = useState<User>({
-    name: "",
-    displayPic: "",
-  });
+export const UserDetails: React.FunctionComponent = ({status,setStatus}: any) => {
 
-  function onSubmit() {
-    setUserDetails({
-      name: "",
-      displayPic: ""
-    });
+  const [userDetails, setUserDetails] = useState<User>({
+    name: null,
+    displayPic:null,
+  });
+  
+
+  function onSubmit(event: any) {    
+    event.preventDefault();
+    setStatus(true);   
   }
 
   return (
     <div>
-      // form for the UserDetails //set the state with the UserDetails
-      <h1>This is the UserDetails Component</h1>
+   
+      <form action="post">
+        <div>
+          <label> Name: </label>
+          <input
+            name="Name"
+            type="text"
+            onChange={(e) =>
+              setUserDetails({ ...userDetails, name: e.target.value })
+            }
+          />
+        </div>
+
+        <div>
+          <label> Display pic : </label>
+          <input
+            type="text"
+            value="enter a url of an image"
+            onChange={(e) =>
+              setUserDetails({ ...userDetails, displayPic: e.target.value })
+            }
+          />
+        </div>
+
+        <button
+          type="submit"
+          value="Send"
+          className="submit-button"
+          onClick={(submit) => onSubmit(submit)}
+        >
+          Start Quiz...
+        </button>
+
+      </form>
+      //set the state with the UserDetails
     </div>
   );
 };
