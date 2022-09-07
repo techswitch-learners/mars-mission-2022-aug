@@ -1,7 +1,6 @@
 @import '../../constants.scss';
 
-#menuToggle
-{
+.navbar {
   display: block;
   position: fixed;
   top: 20px;
@@ -12,15 +11,13 @@
   user-select: none;
 }
 
-#menuToggle a
-{
+.navbar a {
   text-decoration: none;
   color: white;
   transition: color 0.3s, underline 0.3s;
 }
 
-#menuToggle a:hover
-{
+.navbar a:hover {
   color: black;
   text-decoration: underline;
 }
@@ -28,8 +25,7 @@
 /*
  * Just a quick hamburger
  */
-#menuToggle span
-{
+.navbar span {
   display: block;
   width: 33px;
   height: 4px;
@@ -48,13 +44,11 @@
               opacity 0.55s ease;
 }
 
-#menuToggle span:first-child
-{
+.navbar span:first-child {
   transform-origin: 0% 0%;
 }
 
-#menuToggle span:nth-last-child(2)
-{
+.navbar span:nth-last-child(2) {
   transform-origin: 0% 100%;
 }
 
@@ -62,8 +56,7 @@
  * Transform all the slices of hamburger
  * into a crossmark.
  */
-#menuToggle input:checked ~ span
-{
+.navbar input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background: white;
@@ -72,8 +65,7 @@
 /*
  * But let's hide the middle one.
  */
-#menuToggle input:checked ~ span:nth-last-child(3)
-{
+.navbar input:checked ~ span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
@@ -81,8 +73,7 @@
 /*
  * Ohyeah and the last one should go the other direction
  */
-#menuToggle input:checked ~ span:nth-last-child(2)
-{
+.navbar input:checked ~ span:nth-last-child(2) {
   transform: rotate(-45deg) translate(0, -1px);
 }
 
@@ -90,8 +81,7 @@
  * Make this absolute positioned
  * at the top left of the screen
  */
-.menu
-{
+.nav-links {
   position: absolute;
   width: 100px;
   margin: -100px 0 0 -50px;
@@ -110,8 +100,7 @@
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 }
 
-.menu li
-{
+.nav-links li {
   padding: 10px 0;
   font-size: 22px;
 }
@@ -119,12 +108,11 @@
 /*
  * And let's slide it in from the left
  */
-.expanded
-{
+.expanded {
   transform: none;
 }
 
-#menuToggle button {
+.navbar button {
   background: transparent;
   border-width: 0px;
   z-index: 2;

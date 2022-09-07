@@ -15,7 +15,7 @@ export const Navbar: React.FunctionComponent = () => {
   return <nav>
 
 
-    <div id="menuToggle">
+    <div className="navbar">
       <button onClick = {() => toggleMenu()}>
       
         <span ></span>
@@ -24,7 +24,7 @@ export const Navbar: React.FunctionComponent = () => {
 
       </button>
       
-        <ul className = {`menu ${isExpanded ? "expanded" : "collapsed"}`}>
+        <ul className = {`nav-links ${isExpanded ? "expanded" : "collapsed"}`}>
           <li onClick = {() => toggleMenu()}><Link to="/">Home</Link></li>
           <li onClick = {() => toggleMenu()}><Link to="/rovers">Explore Mars</Link></li>
           <li onClick = {() => toggleMenu()}><Link to="/fun-facts">Fun Facts</Link></li>
