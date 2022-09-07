@@ -30,15 +30,11 @@
   width: 33px;
   height: 4px;
   margin-bottom: 5px;
-  position: relative;
-  
+  position: relative;  
   background: $secondary;
-  border-radius: 3px;
-  
+  border-radius: 3px; 
   z-index: 1;
-  
   transform-origin: 4px 0px;
-  
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
               opacity 0.55s ease;
@@ -58,13 +54,15 @@
  */
 .burgerexpanded.spanone {
   transform: rotate(45deg) translate(0, -3px);
+  background-color: white;
 }
 
 /*
  * But let's hide the middle one.
  */
 .burgerexpanded.spantwo {
-  opacity: 0 !important;
+  opacity: 0;
+  background-color: white;
 }
 
 /*
@@ -72,6 +70,7 @@
  */
 .burgerexpanded.spanthree {
   transform: rotate(-45deg) translate(0, -2px);
+  background-color: white;
 }
 
 /*
@@ -79,22 +78,17 @@
  * at the top left of the screen
  */
 .nav-links {
-  
-  position: absolute;
   width: 100px;
   margin: -100px 0 0 -50px;
   padding: 50px;
   padding-top: 125px;
   height:100%;
-  
   background: $primary;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
-  
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
-  
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 
   li {
@@ -112,9 +106,6 @@
 
 .navbar button {
   background: transparent;
-  border-width: 0px;
-}
-
-*{
-  border: solid 1px red;
+  border: transparent;
+  z-index: 4 !important;
 }
