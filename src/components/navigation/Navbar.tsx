@@ -9,27 +9,25 @@ export const Navbar: React.FunctionComponent = () => {
 
   function toggleMenu(){
     setIsExpanded(current => !current)
-    console.log(isExpanded)
   }
 
   return <nav>
 
-
     <div className="navbar">
       <button onClick = {() => toggleMenu()}>
       
-        <span ></span>
-        <span></span>
-        <span></span>
+        <span className = {`spanone ${isExpanded ? "burgerexpanded" : "burgercollapsed"}`}></span>
+        <span className = {`spantwo ${isExpanded ? "burgerexpanded" : "burgercollapsed"}`}></span>
+        <span className = {`spanthree ${isExpanded ? "burgerexpanded" : "burgercollapsed"}`}></span>
 
       </button>
       
-        <ul className = {`nav-links ${isExpanded ? "expanded" : "collapsed"}`}>
-          <li onClick = {() => toggleMenu()}><Link to="/">Home</Link></li>
-          <li onClick = {() => toggleMenu()}><Link to="/rovers">Explore Mars</Link></li>
-          <li onClick = {() => toggleMenu()}><Link to="/fun-facts">Fun Facts</Link></li>
-          <li onClick = {() => toggleMenu()}><Link to="/quiz">Test Your Knowledge</Link></li>
-        </ul>
+      <ul className = {`nav-links ${isExpanded ? "expanded" : "collapsed"}`}>
+        <li onClick = {() => toggleMenu()}><Link to="/">Home</Link></li>
+        <li onClick = {() => toggleMenu()}><Link to="/rovers">Explore Mars</Link></li>
+        <li onClick = {() => toggleMenu()}><Link to="/fun-facts">Fun Facts</Link></li>
+        <li onClick = {() => toggleMenu()}><Link to="/quiz">Test Your Knowledge</Link></li>
+      </ul>
     </div>
   </nav>;
 };

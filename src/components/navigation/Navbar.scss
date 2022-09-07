@@ -56,25 +56,22 @@
  * Transform all the slices of hamburger
  * into a crossmark.
  */
-.navbar input:checked ~ span {
-  opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
-  background: white;
+.burgerexpanded.spanone {
+  transform: rotate(45deg) translate(0, -3px);
 }
 
 /*
  * But let's hide the middle one.
  */
-.navbar input:checked ~ span:nth-last-child(3) {
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
+.burgerexpanded.spantwo {
+  opacity: 0 !important;
 }
 
 /*
  * Ohyeah and the last one should go the other direction
  */
-.navbar input:checked ~ span:nth-last-child(2) {
-  transform: rotate(-45deg) translate(0, -1px);
+.burgerexpanded.spanthree {
+  transform: rotate(-45deg) translate(0, -2px);
 }
 
 /*
@@ -82,6 +79,7 @@
  * at the top left of the screen
  */
 .nav-links {
+  
   position: absolute;
   width: 100px;
   margin: -100px 0 0 -50px;
@@ -105,8 +103,6 @@
   }
 }
 
-
-
 /*
  * And let's slide it in from the left
  */
@@ -117,5 +113,8 @@
 .navbar button {
   background: transparent;
   border-width: 0px;
-  z-index: 2;
+}
+
+*{
+  border: solid 1px red;
 }
