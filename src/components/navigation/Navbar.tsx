@@ -16,13 +16,13 @@ export const Navbar: React.FunctionComponent = () => {
     <div className="navbar">
       <button onClick = {() => toggleMenu()}>
       
-        <span className = {`spanone ${isExpanded ? "burgerexpanded" : "burgercollapsed"}`}></span>
-        <span className = {`spantwo ${isExpanded ? "burgerexpanded" : "burgercollapsed"}`}></span>
-        <span className = {`spanthree ${isExpanded ? "burgerexpanded" : "burgercollapsed"}`}></span>
+        <span className = {`navbar__spanone ${isExpanded ? "burgerexpanded" : "burgercollapsed"}`}></span>
+        <span className = {`navbar__spantwo ${isExpanded ? "burgerexpanded" : "burgercollapsed"}`}></span>
+        <span className = {`navbar__spanthree ${isExpanded ? "burgerexpanded" : "burgercollapsed"}`}></span>
 
       </button>
       
-      <ul className = {`nav-links ${isExpanded ? "expanded" : "collapsed"}`}>
+      <ul className = {`navbar__nav-links ${isExpanded ? "expanded" : "collapsed"}`}>
         <li onClick = {() => toggleMenu()}><Link to="/">Home</Link></li>
         <li onClick = {() => toggleMenu()}><Link to="/rovers">Explore Mars</Link></li>
         <li onClick = {() => toggleMenu()}><Link to="/fun-facts">Fun Facts</Link></li>

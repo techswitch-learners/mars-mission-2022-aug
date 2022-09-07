@@ -48,36 +48,28 @@
   transform-origin: 0% 100%;
 }
 
-/* 
- * Transform all the slices of hamburger
- * into a crossmark.
- */
-.burgerexpanded.spanone {
-  transform: rotate(45deg) translate(0, -3px);
-  background-color: white;
-}
+.burgerexpanded {
+  &.navbar__spanone {
+    transform: rotate(45deg) translate(0, -3px);
+    background-color: white;
+  }
 
-/*
- * But let's hide the middle one.
- */
-.burgerexpanded.spantwo {
-  opacity: 0;
-  background-color: white;
-}
+  &.navbar__spantwo {
+    opacity: 0;
+    background-color: white;
+  }
 
-/*
- * Ohyeah and the last one should go the other direction
- */
-.burgerexpanded.spanthree {
-  transform: rotate(-45deg) translate(0, -2px);
-  background-color: white;
+  &.navbar__spanthree {
+    transform: rotate(-45deg) translate(0, -2px);
+    background-color: white;
+  }
 }
 
 /*
  * Make this absolute positioned
  * at the top left of the screen
  */
-.nav-links {
+.navbar__nav-links {
   width: 100px;
   margin: -100px 0 0 -50px;
   padding: 50px;
