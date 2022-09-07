@@ -31,22 +31,22 @@
 }
 
 
-#menuToggle input
-{
-  display: block;
-  width: 40px;
-  height: 32px;
-  position: absolute;
-  top: -7px;
-  left: -5px;
+// #menuToggle input
+// {
+//   display: block;
+//   width: 40px;
+//   height: 32px;
+//   position: absolute;
+//   top: -7px;
+//   left: -5px;
   
-  cursor: pointer;
+//   cursor: pointer;
   
-  opacity: 0; /* hide this */
-  z-index: 2; /* and place it over the hamburger */
+//   opacity: 0; /* hide this */
+//   z-index: 2; /* and place it over the hamburger */
   
-  -webkit-touch-callout: none;
-}
+//   -webkit-touch-callout: none;
+// }
 
 /*
  * Just a quick hamburger
@@ -113,7 +113,7 @@
  * Make this absolute positioned
  * at the top left of the screen
  */
-#menu
+.menu
 {
   position: absolute;
   width: 100px;
@@ -133,7 +133,7 @@
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 }
 
-#menu li
+.menu li
 {
   padding: 10px 0;
   font-size: 22px;
@@ -142,7 +142,7 @@
 /*
  * And let's slide it in from the left
  */
-#menuToggle input:checked ~ ul
+.expanded
 {
   transform: none;
 }
