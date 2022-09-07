@@ -17,7 +17,6 @@ const App: React.FunctionComponent = () => {
         <Route path="/fun-facts" element={<FunFactPage />} />
         <Route path="/rovers" element={<RoverSelectorPage />}/>
         <Route path="/curiosity" element={<CuriosityMap />}/>
-      
         <Route path="/quiz" element={<QuizPage />} />
       </Routes>
     </>
