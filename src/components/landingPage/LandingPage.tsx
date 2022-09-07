@@ -15,8 +15,6 @@ export const LandingPage: React.FunctionComponent = () => {
         <Link to="/fun-facts"><button className="landing-page-button">Learn More</button></Link>
         <Link to="/quiz"><button className="landing-page-button">Test Your Knowledge</button></Link>
       </div>
-
-
     </main>
   );
 };
