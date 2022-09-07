@@ -98,12 +98,14 @@
   transform: translate(-100%, 0);
   
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+
+  li {
+    padding: 10px 0;
+    font-size: 22px;
+  }
 }
 
-.nav-links li {
-  padding: 10px 0;
-  font-size: 22px;
-}
+
 
 /*
  * And let's slide it in from the left
