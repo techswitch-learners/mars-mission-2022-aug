@@ -14,7 +14,6 @@ export const Navbar: React.FunctionComponent = () => {
 
   return <nav>
 
-    <div className="emptySpacingBox"></div>
 
     <div id="menuToggle">
       <button onClick = {() => toggleMenu()}>
