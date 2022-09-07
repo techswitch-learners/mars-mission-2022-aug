@@ -1,8 +1,8 @@
-import React, {useState} from "react";
-import './Map.scss'
+import React, { useState } from "react";
+import "./Map.scss";
 
 export const CuriosityMap: React.FunctionComponent = () => {
-  const [date, setDate] = useState('0')
+  const [date, setDate] = useState('0');
 
   function handleClick(day:string) {
     setDate(day)
