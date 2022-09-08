@@ -8,12 +8,27 @@
     position: fixed;
     top: 8px;
     width: 90vw;
-    height: 95vh;
+    // height: 95vh;
     align-items: center;
     background-color: aqua;
     padding: 10px;
     flex: 1 1 200px;
     gap: 5px;
+
+    image-and-title {
+      display: flex;
+      flex-direction: column;
+    }
+
+    text-and-buttons {
+      display: flex;
+      flex-direction: column;
+    }
+
+    info-buttons {
+      display: flex;
+      flex-direction: column;
+    }
     
     p {
       margin: 0;
@@ -70,8 +85,15 @@
 @media only screen and (min-width: 700px){
   .expanded{
     top: 266px;
+    flex-direction: row;
     flex-wrap: wrap;
     
+    info-buttons {
+      display: flex;
+      flex-direction: row;
+      width: 50%;
+    }
+
     img {
       height: 250px;
     }
