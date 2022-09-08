@@ -48,7 +48,7 @@ const App: React.FunctionComponent = () => {
             { x: 0.4, y: 0.33, sol: 1486},
             { x: 0.35, y: 0.13, sol: 100},
             { x: 0.47, y: 0.52, sol: 2555},
-            { x: 0.76, y: 0.82, sol: 5110},
+            { x: 0.76, y: 0.82, sol: 5000},
           ]}
         />}/>
         <Route path="/quiz" element={<QuizPage />} />

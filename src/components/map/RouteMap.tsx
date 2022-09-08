@@ -88,11 +88,10 @@ export const RouteMap: React.FunctionComponent<RouteMapProps> = ({
               alt={`Sol ${sol}`}
             />)}
         </div>
-
       </div>
     </>
   }
-
+  
   return (
     <main>
       {imageOrMap}
