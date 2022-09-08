@@ -1,22 +1,29 @@
 import React from "react"
-import { funfacts, FunFacts } from "./funfacts"
+import { funFacts, FunFact } from "./funfacts"
+import { useState } from "react"
 
 interface FunFactsProps {
-    funfacts: FunFacts[];
+    funFacts: FunFact[];
 }
 
-export const FunFactComponent: React.FunctionComponent<FunFactsProps> = ({ funfacts }) => {
+export const FunFactComponent: React.FunctionComponent<FunFactsProps> = ({ funFacts }) => {
 
-    return(
+  
+  const [selectedFact, setSelectedFact] = useState<number>(0);
+
+  // setSelectedFact(2);
+
+  return(
+    <div>
+      {funFacts.map( funFact => (
         <div>
-            {funfacts.map(funfact => (
-                    <div>
-                        <h2>{ funfact.prompt }</h2>
-                        <p>{ funfact.detail }</p>
-                    </div>
-                    )
-                )
-            }
+          <h2>{ funFact.prompt }{selectedFact}{funFact.id}</h2>
+          <button onClick={ () => setSelectedFact(funFact.id)}>^</button>
+          {funFact.id===selectedFact? <p>{ funFact.detail }</p> : null }
         </div>
-    )
+        )
+        )
+      }
+    </div>
+  )
 }

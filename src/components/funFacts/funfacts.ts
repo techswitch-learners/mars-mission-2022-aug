@@ -1,10 +1,10 @@
-export interface FunFacts {
+export interface FunFact {
     id: number;
     prompt: string;
     detail: string;
 }
 
-export const funfacts: FunFacts[] = [
+export const funFacts: FunFact[] = [
     {
         id: 1,
         prompt: "Mars is named after the Roman god of war.",
