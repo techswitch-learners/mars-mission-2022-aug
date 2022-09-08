@@ -1,42 +1,90 @@
 import React, { useState } from "react";
 import { Question } from "./questions";
-import { Reward } from "./Reward";
+import { UserDetailsForm } from "./UserDetailsForm";
 
 interface QuizQuestionsProps {
    questions: Question[];
+   score: number;
+   setScore: (score: number) => void;
+   isEndOfQuestion: boolean;
+   setIsEndOfQuestion: (isEndOfQuestion: boolean) => void;
 }
 
 
 export const QuizQuestions: React.FunctionComponent<QuizQuestionsProps> = ({
-  questions,
+  questions,score,setScore,isEndOfQuestion,setIsEndOfQuestion
 }) => {
 
-   const [score,setScore] = useState(0);
-   const [activeQuestionIndex, setActiveQuestionIndex] = useState(0);
-   const activeQuestion = questions[activeQuestionIndex];
+  const [activeQuestionIndex, setActiveQuestionIndex] = useState(0);
+  const activeQuestion = questions[activeQuestionIndex];
+  const [activeQuestionClicked, setActiveQuestionClicked] = useState(false);
+  const [message, setMessage] = useState("");
+  
+  const selectAnswer = (answerIndex: number) => {
+    setActiveQuestionClicked(true);
+    if (answerIndex === activeQuestion.correctAnswerIndex) {
+      setScore(score + 1);
+      setMessage('Correct!!!')
+    } else{
+      setMessage('Incorrect!!!')
+    } 
+
+    isQuizFinished();
+  }
+
+  const isQuizFinished = ()=>{
+    if(activeQuestionIndex === 10)
+    setIsEndOfQuestion(true);
+  }
+
+  const renderResult = () => {
+    if (activeQuestionClicked !== false) {
+      return (
+      <div className="quiz-questions">
+        <h3>{message}</h3>
+        <p>{activeQuestion.answerDetailsText}</p>
+          <button onClick={() => { moveToNextQuestion() }} >NextQuestion </button>         
+      </div>
+      )
+    }
+  } 
+
+  const moveToNextQuestion = () => {    
+    console.log('clicked the next button');
+    setActiveQuestionClicked(false);
+    setActiveQuestionIndex(activeQuestionIndex + 1);
+  }
 
   return (
-    <div>
+    <div className="quiz-questions">
       <h1>Quiz</h1>
       <div>
         <h3>Question {activeQuestionIndex+1}</h3>
         <p> {activeQuestion.questionText}</p>
         <img src={activeQuestion.questionImageUrl} />
       </div>
-      <form>
+   
         <ul>
           {activeQuestion.answersText.map((answer: string , index: number) => {
             return (
               <li key={ index }>
-                <button type="submit" name="index">
+                <button className="select-answer"
+                  onClick={() => {
+                    selectAnswer(index)
+                }} >
                   { answer }
                 </button>
               </li>
             );  
           })}
-        </ul>
-        
-      </form>
+      </ul>
+     
+    
+      <div>
+        { renderResult() }        
+      </div>
+      
     </div>
+ 
   );
 };
