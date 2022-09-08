@@ -25,13 +25,14 @@
   touch-action: manipulation;
   vertical-align: top;
   white-space: nowrap;
+
+    &:hover {
+      box-shadow: inset 100px 0 0 0 #20afe3;
+      color: white;
+    }
+    
+    &:focus:not(:active) {
+      box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 .125em;
+    }
 }
 
-  &:hover {
-  box-shadow: inset 100px 0 0 0 #20afe3;
-  color: white;
-}
-
-  &:focus:not(:active) {
-  box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 .125em;
-}

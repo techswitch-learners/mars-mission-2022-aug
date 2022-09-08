@@ -60,7 +60,7 @@ export const RouteMap: React.FunctionComponent<RouteMapProps> = ({
         onClick={() => {
           setSol(undefined);
         }}>X</button>
-        {photoArr.slice(0,1).map(photo => <img
+        {photoUrls.slice(0,1).map(photo => <img
           src={photo.img_src}
           alt={`Sol ${sol}`}
         />)}
