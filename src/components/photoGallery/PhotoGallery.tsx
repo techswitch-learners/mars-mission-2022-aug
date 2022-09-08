@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./PhotoGallery.scss"
+import { LargeImage } from "./LargeImage"
 
 export const PhotoGallery: React.FunctionComponent = () => {
 
   const [imageUrls, setImageUrls] = useState<string[]>();
+  const [largeImageUrl, setLargeImageUrl] = useState<string>("https://apod.nasa.gov/apod/image/0201/earthrise_apollo8.jpg");
+  const [isLoading, setIsLoading] =useState<boolean>(false);
+
   const img_urls: string[] = [];
 
         useEffect(() => {
@@ -11,10 +15,12 @@ export const PhotoGallery: React.FunctionComponent = () => {
           
           const fetchData = async () => {
             try {
+              setIsLoading(true);
               const response = await fetch(url);
               const json = await response.json();
               json.forEach((item: {url: string}) => img_urls.push(item.url));  
               setImageUrls(img_urls);
+              setIsLoading(false);
             } catch (error) {
               console.log("error", error);
             }
@@ -22,10 +28,17 @@ export const PhotoGallery: React.FunctionComponent = () => {
       
           fetchData();
       }, []);
-
+  
+      if(isLoading) { 
+        return <p>Loading.....</p>
+      }
   return (
-      <div className = "imageGallery">
-      {imageUrls?.map(url => <img className="spaceImage" src={url} alt = ""/>)}
-          </div>
+      <>
+        <LargeImage largeImageUrl={largeImageUrl} />
+        <div className = "imageGallery">
+          {imageUrls?.map(url => <img onClick={ () => {setLargeImageUrl(url);window.scrollTo(0,0)}} 
+            className="spaceImage" src={url} alt = ""/>)}
+        </div>
+      </>
   );
 };
