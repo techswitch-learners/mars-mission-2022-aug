@@ -5,26 +5,38 @@ import { questions } from "./questions";
 import { Reward } from "./Reward";
 import './QuizQuestions.scss';
 
+interface User {
+  name?: string;
+  displayPicUrl?: string;
+}
+
 export const QuizPage: React.FunctionComponent = () => {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
   const [score,setScore] = useState<number>(0);
-  const [isEndOfQuestion, setIsEndOfQuestion] = useState(false);
- 
+  const [isEndOfQuestions, setIsEndOfQuestions] = useState(false);
+  const [userDetails, setUserDetails] = useState<User>();
+  
   if (isUserLoggedIn === false) {
     return (
       <UserDetailsForm
         isUserLoggedIn={isUserLoggedIn}
         setIsUserLoggedIn={setIsUserLoggedIn}
+        setUserDetails={setUserDetails}
       />
     );
-  } else {    
-    return (<QuizQuestions
+  } else if (!isEndOfQuestions) {  
+    return (
+      <QuizQuestions
       questions={questions}
       score={score}
       setScore={setScore}
-      isEndOfQuestion={isEndOfQuestion}
-      setIsEndOfQuestion={setIsEndOfQuestion}
-    />);
+      setIsEndOfQuestions={setIsEndOfQuestions}
+      />
+    );
+  }else{
+    return(
+    <Reward score={score} userDetails={userDetails} />
+    );
   }  
 };
 

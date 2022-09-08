@@ -1,0 +1,28 @@
+*{
+  box-sizing: border-box;
+  background-color:$secondary-light;
+}
+.reward-for-user{
+  padding:150px;
+  z-index: 3;
+  top: 20px;
+  left: 20px;
+  text-align: left;
+  background:$secondary-light;
+}
+img{
+  width:40%;
+  height:25%;
+  float: left;
+}
+h1{
+  color: White;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+h3{
+   color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+
+}

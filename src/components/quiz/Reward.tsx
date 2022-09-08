@@ -1,9 +1,21 @@
 import React from "react";
 
-export const Reward: React.FunctionComponent = () => {
+
+interface User {
+  name?: string;
+  displayPicUrl?: string;
+}
+interface RewardProps {
+  score: number;
+  userDetails: User;
+}
+
+export const Reward: React.FunctionComponent<RewardProps> = ({score,userDetails}) => {
   return (
-    <div>
-      <h1>This is the Reward Component</h1>
+    <div className="reward-for-user">
+      <img src={userDetails.displayPicUrl} alt="display picture" />
+      <h2>{userDetails.name} </h2>
+      <h3>Congratulations Martian!!! Your score is {score}</h3>
     </div>
   );
 };

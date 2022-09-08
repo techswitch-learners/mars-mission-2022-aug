@@ -9,13 +9,14 @@ interface User {
 interface UserDetailsFormProps {
   isUserLoggedIn: boolean;
   setIsUserLoggedIn: (isUserLoggedIn: boolean) => void;
+  setUserDetails: (setUserDetails: User) => void; 
 }
 
 export const UserDetailsForm: React.FunctionComponent<UserDetailsFormProps> = ({
   isUserLoggedIn,
-  setIsUserLoggedIn,
+  setIsUserLoggedIn,setUserDetails
 }) => {
-  const [userDetails, setUserDetails] = useState<User>();
+  
 
   const onSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
@@ -34,7 +35,7 @@ export const UserDetailsForm: React.FunctionComponent<UserDetailsFormProps> = ({
               id="user-details-form-name"
               type="text"
               onChange={(e) =>
-                setUserDetails({ ...userDetails, name: e.target.value })
+                setUserDetails({ name: e.target.value })
               }
             />
           </label>
@@ -48,7 +49,6 @@ export const UserDetailsForm: React.FunctionComponent<UserDetailsFormProps> = ({
               type="text"
               onChange={(e) =>
                 setUserDetails({
-                  ...userDetails,
                   displayPicUrl: e.target.value,
                 })
               }

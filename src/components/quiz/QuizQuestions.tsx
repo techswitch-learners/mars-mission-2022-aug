@@ -6,13 +6,12 @@ interface QuizQuestionsProps {
    questions: Question[];
    score: number;
    setScore: (score: number) => void;
-   isEndOfQuestion: boolean;
-   setIsEndOfQuestion: (isEndOfQuestion: boolean) => void;
+   setIsEndOfQuestions: (isEndOfQuestions: boolean) => void;
 }
 
 
 export const QuizQuestions: React.FunctionComponent<QuizQuestionsProps> = ({
-  questions,score,setScore,isEndOfQuestion,setIsEndOfQuestion
+  questions,score,setScore,setIsEndOfQuestions
 }) => {
 
   const [activeQuestionIndex, setActiveQuestionIndex] = useState(0);
@@ -33,8 +32,8 @@ export const QuizQuestions: React.FunctionComponent<QuizQuestionsProps> = ({
   }
 
   const isQuizFinished = ()=>{
-    if(activeQuestionIndex === 10)
-    setIsEndOfQuestion(true);
+    if(activeQuestionIndex === questions.length)
+    setIsEndOfQuestions(true);
   }
 
   const renderResult = () => {
