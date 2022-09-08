@@ -1,30 +1,39 @@
 @import "../../constants.scss";
 *{
   box-sizing: border-box;
-  background-color:$secondary-light;
 }
 .reward-for-user{
-  padding:150px;
-  margin-left: 30px;
+  width:80%;
+  padding:75px 30px;
+  border: 2px $secondary;
+  margin-top:200px;
   z-index: 3;
-  top: 20px;
   left: 20px;
-  text-align: left;
-  background:$primary-light;
+  background:$primary;
+  position: relative;
 }
-img{
-  width:40%;
-  height:25%;
-  float: left;
+.user-image{
+  width:125px;
+  height:125px;
+  position: absolute;
+  top:12.5px;
+  left:20px;
 }
-h1{
-  color: $secondary;
+.reward-card-print{
+  color: white;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
+  position: absolute;
+  bottom: 10px;
+  left:200px;
+  background-color:$primary;
 }
-h3{
-   color: $secondary;
+.user-name{
+  color: white;
   font-family: 'Courier New', Courier, monospace;
-  font-weight: bold;
-
+  font-weight: 30px;
+  position: absolute;
+  top:30px;
+  left:200px;
+  background-color:$primary;
 }
