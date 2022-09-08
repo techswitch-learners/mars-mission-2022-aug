@@ -1,0 +1,13 @@
+.funfact {
+    display: flex;
+    flex-direction: row;
+    width:300px;
+}
+
+.funfact__prompt {
+    width: 250px;
+}
+
+.funfact__detail {
+    width:300px;
+}
