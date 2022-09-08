@@ -1,12 +1,20 @@
 import React, { useState } from "react";
+<<<<<<< HEAD
 import { funFacts,  FunFact  as FunFactInterface } from "./funfacts";
+=======
+import { funFacts, FunFact as FunFactInterface} from "./funfacts";
+>>>>>>> 0943b17172ee742768995ff7f3254665efdcf240
 import "./FunFactPage.scss";
 
 interface FunFactProps {
     funFacts: FunFactInterface[];
 }
 
+<<<<<<< HEAD
 export const FunFact: React.FunctionComponent<FunFactProps> = ({ funFacts }) => {
+=======
+export const FunFactComponent: React.FunctionComponent<FunFactProps> = ({ funFacts }) => {
+>>>>>>> 0943b17172ee742768995ff7f3254665efdcf240
 
   const [selectedFactId, setSelectedFactId] = useState(0);
 
@@ -29,7 +37,12 @@ export const FunFact: React.FunctionComponent<FunFactProps> = ({ funFacts }) => 
           </div>
           {funFact.id===selectedFactId? <p className="funfact__detail">{funFact.detail}</p> : null }
         </div>
+<<<<<<< HEAD
       ))}
+=======
+        ))
+      }
+>>>>>>> 0943b17172ee742768995ff7f3254665efdcf240
     </div>
   )
 }
