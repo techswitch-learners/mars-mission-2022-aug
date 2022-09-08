@@ -21,17 +21,20 @@ export const RouteMap: React.FunctionComponent<RouteMapProps> = ({
   pois,
 }) => {
   const [sol, setSol] = useState<number>();
-  const [photoArr, setPhotosArr] = useState<string[]>([])
+  const [photoArr, setPhotosArr] = useState<string[]>([]);
+  const [isLoading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
     const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/${roverName}/photos?sol=${sol}&camera=fhaz&api_key=5j3Pvrt0HVQ1PXgmycftrPgdMFA9g0z4NxEBe3dd`;
 
     const fetchData = async () => {
       try {
+        setLoading(true)
         const response = await fetch(url);
         const json = await response.json();
         console.log(json.photos);
-        setPhotosArr(json.photos)
+        setPhotosArr(json.photos);
+        setLoading(false);
       } catch (error) {
         console.log("error", error);
       }
@@ -40,12 +43,14 @@ export const RouteMap: React.FunctionComponent<RouteMapProps> = ({
 }, [sol]);
 
   let imageOrMap = <></>;
-  console.log(pois);
+
+  if(isLoading) return <p>Loading....</p>;
+
   if (sol === undefined) {
     imageOrMap = <>
       <div className="map">
-        <img src={mapImageUrl} alt={roverName} />
-        {pois.map((poi) => <RoutePoiButton x={poi.x} y={poi.y} sol={poi.sol} setSol={setSol} />)}
+        <img src={mapImageUrl} alt={roverName} />;
+        {pois.map((poi) => <RoutePoiButton x={poi.x} y={poi.y} sol={poi.sol} setSol={setSol} />)};
       </div>
     </>
   } else {
@@ -55,7 +60,7 @@ export const RouteMap: React.FunctionComponent<RouteMapProps> = ({
         className="route__poi-button"
         onClick={() => {
           setSol(undefined);
-        }}>X</button>
+        }}>X</button>;
         {photoArr.slice(0,1).map(photo => <img
           src={photo.img_src}
           alt={`Sol ${sol}`}
@@ -66,7 +71,7 @@ export const RouteMap: React.FunctionComponent<RouteMapProps> = ({
 
   return (
     <main>
-      {imageOrMap}
+      {imageOrMap};
     </main>
   );
 };
