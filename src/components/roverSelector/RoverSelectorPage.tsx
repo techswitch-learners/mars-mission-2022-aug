@@ -108,4 +108,3 @@ export const RoverSelectorPage: React.FunctionComponent = () => {
     </div>
   );
 };
-
