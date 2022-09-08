@@ -27,7 +27,7 @@ export const FunFactComponent: React.FunctionComponent<FunFactsProps> = ({ funFa
 
           <div className="funfact">
             <h2 className="funfact__prompt">{ funFact.prompt }</h2>
-            <button className="funfact__prompt--reveal" onClick={ () => toggleFactDetail(funFact.id)}>^</button>
+            <button className={`funfact__button ${funFact.id===selectedFact ? "funfact__button--revealed" : ""}`} onClick={ () => toggleFactDetail(funFact.id)}>^</button>
           </div>
             {funFact.id===selectedFact? <p className="funfact__detail">{ funFact.detail }</p> : null }
         </div>
