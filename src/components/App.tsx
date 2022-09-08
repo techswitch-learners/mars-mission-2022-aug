@@ -6,6 +6,7 @@ import { LandingPage } from "./landingPage/LandingPage";
 import { FunFactPage } from "./funFacts/FunFactPage";
 import { RoverSelectorPage } from "./roverSelector/RoverSelectorPage";
 import { QuizPage } from "./quiz/QuizPage"
+import { PhotoGallery } from "./photoGallery/PhotoGallery";
 
 const App: React.FunctionComponent = () => {
   return (
@@ -16,6 +17,7 @@ const App: React.FunctionComponent = () => {
         <Route path="/fun-facts" element={<FunFactPage />} />
         <Route path="/rovers" element={<RoverSelectorPage />} />
         <Route path="/quiz" element={<QuizPage />} />
+        <Route path="/photo-gallery" element={<PhotoGallery />} />
       </Routes>
     </>
   );

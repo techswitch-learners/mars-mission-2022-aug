@@ -1,0 +1,14 @@
+.imageGallery {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.spaceImage {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    
+}
