@@ -1,4 +1,4 @@
-export interface questionText {
+export interface Question {
   questionText: string;
   answersText: string[];
   correctAnswerIndex: number;
@@ -6,7 +6,7 @@ export interface questionText {
   questionImageUrl: string;
 }
 
-export const questionTexts: questionText[] = [
+export const questions: Question[] = [
   {    
     questionText: "How many moons does Mars have?",
     answersText: ["none", "1", "2"],
