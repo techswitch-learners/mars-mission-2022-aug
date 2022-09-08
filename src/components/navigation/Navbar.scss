@@ -27,7 +27,7 @@
     height: 4px;
     margin-bottom: 5px;
     position: relative;  
-    background: black;
+    background: white;
     border-radius: 3px; 
     z-index: 1;
     transform-origin: 4px 0px;
@@ -39,7 +39,9 @@
   button {
     background: transparent;
     border: transparent;
-    z-index: 4 !important;
+    z-index: 4;
+    border-radius: 2px;
+    padding-top: 5px;
   }  
 }
 

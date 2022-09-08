@@ -1,38 +1,35 @@
-import React from "react"
-import { funFacts, FunFact } from "./funfacts"
-import { useState } from "react"
-import "./FunFactPage.scss"
+import React, { useState } from "react";
+import { funFacts,  FunFact  as FunFactInterface } from "./funfacts";
+import "./FunFactPage.scss";
 
-interface FunFactsProps {
-    funFacts: FunFact[];
+interface FunFactProps {
+    funFacts: FunFactInterface[];
 }
 
-export const FunFactComponent: React.FunctionComponent<FunFactsProps> = ({ funFacts }) => {
+export const FunFact: React.FunctionComponent<FunFactProps> = ({ funFacts }) => {
 
-  const [selectedFact, setSelectedFact] = useState<number>(0);
+  const [selectedFactId, setSelectedFactId] = useState(0);
 
-  function toggleFactDetail(funFactId:number){
-    if (selectedFact===funFactId){
-      setSelectedFact(0);
+  const toggleFactDetail = (funFactId: number) => {
+    if (selectedFactId === funFactId){
+      setSelectedFactId(0);
     }
     else {
-      setSelectedFact(funFactId);
+      setSelectedFactId(funFactId);
     }
   }
 
   return(
     <div>
-      {funFacts.map( funFact => (
+      {funFacts.map(funFact => (
         <div className="funfact">
           <div className="funfact__prompt">
-            <h2 className="funfact__prompt--question">{ funFact.prompt }</h2>
-            <button className={`funfact__button ${funFact.id===selectedFact ? "funfact__button--revealed" : ""}`} onClick={ () => toggleFactDetail(funFact.id)}>^</button>
+            <h2 className="funfact__prompt-question">{funFact.prompt}</h2>
+            <button className={`funfact__button ${funFact.id===selectedFactId ? "funfact__button--revealed" : ""}`} onClick={ () => toggleFactDetail(funFact.id)}>^</button>
           </div>
-            {funFact.id===selectedFact? <p className="funfact__detail">{ funFact.detail }</p> : null }
+          {funFact.id===selectedFactId? <p className="funfact__detail">{funFact.detail}</p> : null }
         </div>
-        )
-        )
-      }
+      ))}
     </div>
   )
 }

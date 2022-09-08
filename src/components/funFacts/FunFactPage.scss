@@ -1,7 +1,8 @@
 @import "../../constants.scss";
 
 h1 {
-    padding-left: 30%;
+    padding-left: 80px;
+    margin-top: 14px;
 }
 
 .funfact {
@@ -15,22 +16,24 @@ h1 {
 .funfact__prompt {
     display: flex;
     flex-direction: row;
-    width:300px;
+    width:100%;
+    justify-content: space-between;
 
 }
 
-.funfact__prompt--question {
+.funfact__prompt-question {
     font-size:18px;
-    width: 250px;
+    width: 80%;
     margin-top: 0;
     margin-bottom: 0;
     transition: 0.3s;
 }
 
 .funfact__detail {
-    width:250px;
-    margin-top: 0;
-    margin-bottom: 20px;
+    width:80%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: justify;
 }
 
 .funfact__button {
