@@ -6,14 +6,15 @@
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 50px;
-    width: 100%;
+    top: 8px;
+    width: 90vw;
+    height: 95vh;
     align-items: center;
     background-color: aqua;
     padding: 10px;
     flex: 1 1 200px;
     gap: 5px;
-
+// Can we get a cool space font from Google?
     img {
         width: 100%;
     }
