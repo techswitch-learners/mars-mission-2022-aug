@@ -16,7 +16,6 @@ const App: React.FunctionComponent = () => {
         <Route path="/" element={<LandingPage />} />
         <Route path="/fun-facts" element={<FunFactPage />} />
         <Route path="/rovers" element={<RoverSelectorPage />} />
-        {/* <Route path="/curiosity" element={<CuriosityMap />} /> */}
         <Route path="/rovers" element={<RoverSelectorPage />}/>
         <Route path="/rovers/curiosity" element={<RouteMap
           roverName="Curiosity"

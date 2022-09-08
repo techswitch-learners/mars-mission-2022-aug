@@ -27,11 +27,11 @@
   white-space: nowrap;
 }
 
-.route__poi-button:hover {
+  &:hover {
   box-shadow: inset 100px 0 0 0 #20afe3;
   color: white;
 }
 
-.route__poi-button:focus:not(:active) {
+  &:focus:not(:active) {
   box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 .125em;
 }

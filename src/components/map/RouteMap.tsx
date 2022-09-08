@@ -21,26 +21,25 @@ export const RouteMap: React.FunctionComponent<RouteMapProps> = ({
   pois,
 }) => {
   const [sol, setSol] = useState<number>();
-  const [photoArr, setPhotosArr] = useState<string[]>([]);
-  const [isLoading, setLoading] = useState<boolean>(false);
+  const [photoUrls, setPhotosUrls] = useState<string[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/${roverName}/photos?sol=${sol}&camera=fhaz&api_key=5j3Pvrt0HVQ1PXgmycftrPgdMFA9g0z4NxEBe3dd`;
 
     const fetchData = async () => {
       try {
-        setLoading(true)
+        setIsLoading(true)
         const response = await fetch(url);
         const json = await response.json();
-        console.log(json.photos);
-        setPhotosArr(json.photos);
-        setLoading(false);
+        setPhotosUrls(json.photos);
+        setIsLoading(false);
       } catch (error) {
         console.log("error", error);
       }
     };
     fetchData();
-}, [sol]);
+  }, [sol]);
 
   let imageOrMap = <></>;
 
