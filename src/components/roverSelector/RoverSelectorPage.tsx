@@ -15,7 +15,7 @@ export const RoverSelectorPage: React.FunctionComponent = () => {
           </div>
         <div className= {`spirit-pop-up ${showInfo === "spirit" ? "expanded" : "collapsed"}`}>
           <img src={spiritImage} alt="Spirit Rover"/>
-          <h3>Spirit Rover</h3>
+          <h3 className="info-card-title">Spirit Rover</h3>
           <p>Launch Date:<br/>
             June 10, 2003<br/>
             Landed on Mars:<br/>
@@ -27,10 +27,10 @@ export const RoverSelectorPage: React.FunctionComponent = () => {
             1,062 kilograms (About the weight of a walrus or a small car!)<br/>
             Distance Travelled:<br/>
             4.8 miles…<br/>
-            That's 0.000074 miles per hour… not fast, although it took a lot of breaks!<br/>
-            Click below to see the map of its routes</p>
+            That's 0.000074 miles per hour… not fast, although it took a lot of breaks!
+            </p>
           <button>See Spirit's Route</button>
-          <button onClick={() => setShowInfo("")}>Back</button>
+          <button className="route-button" onClick={() => setShowInfo("")}>Back</button>
         </div>
         <div className="rover" onClick={() => setShowInfo("opportunity")}>
           <img src={opportunityImage} alt="Opportunity Rover" />
@@ -38,7 +38,7 @@ export const RoverSelectorPage: React.FunctionComponent = () => {
           </div>
         <div className= {`opportunity-pop-up ${showInfo === "opportunity" ? "expanded" : "collapsed"}`}>
           <img src={opportunityImage} alt="Opportunity Rover"/>
-          <h3>Opportunity Rover</h3>
+          <h3 className="info-card-title">Opportunity Rover</h3>
           <p>Launch Date:<br/>
             July 8, 2003<br/>
             Landed on Mars:<br/>
@@ -50,11 +50,10 @@ export const RoverSelectorPage: React.FunctionComponent = () => {
             1,062 kilograms (About the weight of a walrus or a small car!)<br/>
             Distance Travelled:<br/>
             28 miles…<br/>
-            It was the first thing built by humans to travel that far on another planet!<br/>
-            Click below to see the map of its routes<br/>
+            It was the first thing built by humans to travel that far on another planet!
             </p>
           <button>See Opportunity's Route</button>
-          <button onClick={() => setShowInfo("")}>Back</button>
+          <button className="route-button" onClick={() => setShowInfo("")}>Back</button>
         </div>
           <div onClick={() => setShowInfo("curiosity")} className="rover">
             <img src={curiosityImage} alt="Curiosity Rover" />
@@ -62,7 +61,7 @@ export const RoverSelectorPage: React.FunctionComponent = () => {
           </div>
         <div className= {`curiosity-pop-up ${showInfo === "curiosity" ? "expanded" : "collapsed"}`}>
           <img src={curiosityImage} alt="Curiosity Rover"/>
-          <h3>Curiosity Rover</h3>
+          <h3 className="info-card-title">Curiosity Rover</h3>
           <p>Launch Date:<br/>
             November 26, 2011<br/>
             Landed on Mars:<br/>
@@ -73,11 +72,10 @@ export const RoverSelectorPage: React.FunctionComponent = () => {
             3,893 kilograms (About the weight of an Asian elephant or a flat-bed truck!)<br/>
             Distance Travelled:<br/>
             17.5 miles…<br/>
-            It has a top speed of 0.05 miles per hour, it doesn't sound fast but Mars is really rocky!<br/>
-            Click below to see the map of its routes<br/>
+            It has a top speed of 0.05 miles per hour, it doesn't sound fast but Mars is really rocky!
           </p>
           <button>See Curiosity's Route</button>
-          <button onClick={() => setShowInfo("")}>Back</button>
+          <button className="route-button" onClick={() => setShowInfo("")}>Back</button>
         </div>
     </div>
   );

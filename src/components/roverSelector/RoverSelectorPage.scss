@@ -14,6 +14,13 @@
     padding: 10px;
     flex: 1 1 200px;
     gap: 5px;
+    
+    p {
+      margin: 0;
+      text-align: left;
+      font-size: 0.85em;
+    }
+
 // Can we get a cool space font from Google?
     img {
         width: 100%;
@@ -53,5 +60,20 @@
     height: 90px;
     object-fit: cover;
     object-position: center;
+  }
+}
+
+.info-card-title{
+  margin: 0;
+}
+
+@media only screen and (min-width: 700px){
+  .expanded{
+    top: 266px;
+    flex-wrap: wrap;
+    
+    img {
+      height: 250px;
+    }
   }
 }
