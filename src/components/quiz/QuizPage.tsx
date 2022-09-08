@@ -13,7 +13,8 @@ export const QuizPage: React.FunctionComponent = () => {
         setIsUserLoggedIn={ setIsUserLoggedIn }
       />
     );
-  } else {
+  } 
+  if(isUserLoggedIn === true) {
     return <QuizQuestions questions={ questions } />;
   }
 };

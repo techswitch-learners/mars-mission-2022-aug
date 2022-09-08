@@ -32,9 +32,10 @@ export const QuizQuestions: React.FunctionComponent<QuizQuestionsProps> = ({
                   { answer }
                 </button>
               </li>
-            );
+            );  
           })}
         </ul>
+        
       </form>
     </div>
   );
