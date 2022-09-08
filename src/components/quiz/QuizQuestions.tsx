@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Question } from "./questions";
+import { Reward } from "./Reward";
 
 interface QuizQuestionsProps {
    questions: Question[];
