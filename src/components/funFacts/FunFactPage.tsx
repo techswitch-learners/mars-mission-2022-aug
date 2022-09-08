@@ -1,6 +1,6 @@
 import React from "react";
-import { funFacts } from "./funfacts";
-import { FunFact } from "./FunFactComponent";
+import { funFacts } from "./funFacts";
+import { FunFact } from "./FunFact";
 import "./FunFactPage.scss";
 
 export const FunFactPage: React.FunctionComponent = () => {
