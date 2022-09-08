@@ -5,7 +5,9 @@ interface QuizQuestionsProps {
   questions: Question[];
 }
 
-export const QuizQuestions: React.FunctionComponent<QuizQuestionsProps> = ({ questions }) => {
+export const QuizQuestions: React.FunctionComponent<QuizQuestionsProps> = ({
+  questions,
+}) => {
   return (
     <div>
       <h1>This is the Questions Component</h1>
