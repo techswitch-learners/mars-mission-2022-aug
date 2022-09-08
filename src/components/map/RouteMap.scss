@@ -1,0 +1,22 @@
+.map {
+  position: relative;
+
+  img {
+    padding: 5%;
+    width: 90%;
+    height: auto;
+  }
+}
+
+.image-display {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  button {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
+}
