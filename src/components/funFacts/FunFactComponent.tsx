@@ -8,18 +8,28 @@ interface FunFactsProps {
 
 export const FunFactComponent: React.FunctionComponent<FunFactsProps> = ({ funFacts }) => {
 
-  
   const [selectedFact, setSelectedFact] = useState<number>(0);
 
-  // setSelectedFact(2);
+  function toggleFactDetail(funFactId:number){
+    if (selectedFact===funFactId){
+      setSelectedFact(0);
+    }
+    else {
+      setSelectedFact(funFactId);
+    }
+  }
 
   return(
     <div>
       {funFacts.map( funFact => (
         <div>
-          <h2>{ funFact.prompt }{selectedFact}{funFact.id}</h2>
-          <button onClick={ () => setSelectedFact(funFact.id)}>^</button>
+
+          <h2>{ funFact.prompt }</h2>
+
+          <button onClick={ () => toggleFactDetail(funFact.id)}>^</button>
+
           {funFact.id===selectedFact? <p>{ funFact.detail }</p> : null }
+
         </div>
         )
         )
