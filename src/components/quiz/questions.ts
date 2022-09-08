@@ -7,8 +7,6 @@ export interface Question {
   url: string;
 }
 
-export const a = 1;
-
 export const questions: Question[] = [
   {
     "id": 1,
