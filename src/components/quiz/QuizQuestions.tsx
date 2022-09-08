@@ -27,63 +27,58 @@ export const QuizQuestions: React.FunctionComponent<QuizQuestionsProps> = ({
     } else{
       setMessage('Incorrect!!!')
     } 
-
-    isQuizFinished();
-  }
-
-  const isQuizFinished = ()=>{
-    if(activeQuestionIndex === questions.length)
-    setIsEndOfQuestions(true);
   }
 
   const renderResult = () => {
     if (activeQuestionClicked !== false) {
       return (
-      <div className="quiz-questions">
-        <h3>{message}</h3>
-        <p>{activeQuestion.answerDetailsText}</p>
-          <button onClick={() => { moveToNextQuestion() }} >NextQuestion </button>         
-      </div>
-      )
+        <div className="quiz-questions">
+          <h3>{message}</h3>
+          <p>{activeQuestion.answerDetailsText}</p>
+          <button className="next-question" onClick={() => { moveToNextQuestion() }} >NextQuestion </button>
+        </div>
+      );
     }
   } 
 
   const moveToNextQuestion = () => {    
-    console.log('clicked the next button');
     setActiveQuestionClicked(false);
-    setActiveQuestionIndex(activeQuestionIndex + 1);
+    if (activeQuestionIndex < questions.length) {
+        setActiveQuestionIndex(activeQuestionIndex + 1);   
+    }
   }
 
-  return (
-    <div className="quiz-questions">
-      <h1>Quiz</h1>
-      <div>
-        <h3>Question {activeQuestionIndex+1}</h3>
-        <p> {activeQuestion.questionText}</p>
-        <img src={activeQuestion.questionImageUrl} />
-      </div>
-   
+  if (activeQuestionIndex < questions.length) {
+    return (
+      <div className="quiz-questions">
+        <h1>Quiz</h1>
+        <div>
+          <h3>Question {activeQuestionIndex + 1}</h3>
+          <p> {activeQuestion.questionText}</p>
+          <img src={activeQuestion.questionImageUrl} />
+        </div>
+
         <ul>
-          {activeQuestion.answersText.map((answer: string , index: number) => {
+          {activeQuestion.answersText.map((answer: string, index: number) => {
             return (
-              <li key={ index }>
-                <button className="select-answer"
+              <li key={index}>
+                <button
+                  className="select-answer"
                   onClick={() => {
-                    selectAnswer(index)
-                }} >
-                  { answer }
+                    selectAnswer(index);
+                  }}
+                >
+                  {answer}
                 </button>
               </li>
-            );  
+            );
           })}
-      </ul>
-     
-    
-      <div>
-        { renderResult() }        
+        </ul>
+
+        <div>{renderResult()}</div>
       </div>
-      
-    </div>
- 
-  );
+    );
+  } else {
+    setIsEndOfQuestions(true);
+  }
 };

@@ -33,11 +33,12 @@ export const QuizPage: React.FunctionComponent = () => {
       setIsEndOfQuestions={setIsEndOfQuestions}
       />
     );
-  }else{
-    return(
+  } else {
+    console.log('rewards Component');   
+    return (
     <Reward score={score} userDetails={userDetails} />
     );
-  }  
+} 
 };
 
 
