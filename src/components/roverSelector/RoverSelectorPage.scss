@@ -1,0 +1,21 @@
+.rover-selector {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+  
+.rover {
+  background-color: orangered;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  flex: 1 1 200px;
+
+  img {
+    height: 90px;
+    object-fit: cover;
+    object-position: center;
+  }
+}
