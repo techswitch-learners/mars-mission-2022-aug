@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { QuizQuestions } from "./QuizQuestions";
-import { UserDetails } from "./UserDetails";
-import { Reward } from "./Reward";
+import { UserDetailsForm } from "./UserDetailsForm";
 import { questions } from "./questions";
 
 export const QuizPage: React.FunctionComponent = () => {
-  return (
-    <div>
-      <UserDetails />
-      <QuizQuestions questions={questions} />
-      <Reward />
-    </div>
-  );
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+
+  if (isUserLoggedIn === false) {
+    return (
+      <UserDetailsForm
+        isUserLoggedIn={ isUserLoggedIn }
+        setIsUserLoggedIn={ setIsUserLoggedIn }
+      />
+    );
+  } else {
+    return <QuizQuestions questions={ questions } />;
+  }
 };
