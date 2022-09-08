@@ -1,28 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { Question } from "./questions";
 
 interface QuizQuestionsProps {
-  questions: Question[];
+   questions: Question[];
 }
+
 
 export const QuizQuestions: React.FunctionComponent<QuizQuestionsProps> = ({
   questions,
 }) => {
+
+   const [score,setScore] = useState(0);
+   const [activeQuestionIndex, setActiveQuestionIndex] = useState(0);
+   const activeQuestion = questions[activeQuestionIndex];
+
   return (
     <div>
       <h1>Quiz</h1>
       <div>
-        <h3>Question {activeQuestion.id}</h3>
-        <p> {activeQuestion.Question}</p>
-        <img src={activeQuestion.url} />
+        <h3>Question {activeQuestionIndex+1}</h3>
+        <p> {activeQuestion.questionText}</p>
+        <img src={activeQuestion.questionImageUrl} />
       </div>
       <form>
         <ul>
-          {activeQuestion.Answers.map((answer: any, index: any) => {
+          {activeQuestion.answersText.map((answer: string , index: number) => {
             return (
-              <li>
+              <li key={ index }>
                 <button type="submit" name="index">
-                  {answer}
+                  { answer }
                 </button>
               </li>
             );
