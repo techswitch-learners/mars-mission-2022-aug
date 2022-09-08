@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { QuizQuestions } from "./QuizQuestions";
 import { UserDetailsForm } from "./UserDetailsForm";
-import { Reward } from "./Reward";
+import { questions } from "./questions";
 
 export const QuizPage: React.FunctionComponent = () => {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
@@ -14,7 +14,6 @@ export const QuizPage: React.FunctionComponent = () => {
       />
     );
   } else {
-    return <QuizQuestions />;
+    return <QuizQuestions questions={ questions } />;
   }
-  return <Reward />;
 };
