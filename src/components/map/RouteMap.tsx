@@ -20,9 +20,9 @@ export const RouteMap: React.FunctionComponent<RouteMapProps> = ({
   pois,
 }) => {
   const [sol, setSol] = useState<number>();
-
+  
   let imageOrMap = <></>;
-
+  console.log(pois);
   if (sol === undefined) {
     imageOrMap = <>
       <div className="map">
@@ -32,7 +32,8 @@ export const RouteMap: React.FunctionComponent<RouteMapProps> = ({
     </>
   } else {
     imageOrMap = <>
-      <button onClick={() => {
+      <button className=""
+      onClick={() => {
         setSol(undefined);
       }}>X</button>
       <img
