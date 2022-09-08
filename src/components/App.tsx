@@ -22,14 +22,12 @@ const App: React.FunctionComponent = () => {
           roverName="Curiosity"
           mapImageUrl="https://mars.nasa.gov/system/resources/deepzooms/24816_MSL_TraverseMap_Sol2695.jpg"
           pois={[
-            { x: 0.68, y: 0.1, sol: 1},
+            { x: 0.68, y: 0.1, sol: 0},
             { x: 0.45, y: 0.41, sol: 655},
             { x: 0.326, y: 0.76, sol: 1683},
-            { x: 0.356, y: 0.912, sol: 2695},
+            { x: 0.4, y: 0.86, sol: 2695},
           ]}
         />}/>
-      
-
         <Route path="/quiz" element={<QuizPage />} />
       </Routes>
     </>
