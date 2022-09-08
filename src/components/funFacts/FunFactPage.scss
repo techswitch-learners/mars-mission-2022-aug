@@ -1,11 +1,25 @@
+@import "../../constants.scss";
+
+h1 {
+    padding-left: 30%;
+}
+
 .funfact {
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+    background-color: $primary;
+}
+
+.funfact__prompt {
     display: flex;
     flex-direction: row;
     width:300px;
 
 }
 
-.funfact__prompt {
+.funfact__prompt--question {
     font-size:18px;
     width: 250px;
     margin-top: 0;
@@ -14,13 +28,13 @@
 }
 
 .funfact__detail {
-    width:300px;
+    width:250px;
     margin-top: 0;
     margin-bottom: 20px;
 }
 
 .funfact__button {
-    width: 40px;
+    margin-right: 20px;
     text-align: center;
     border: none;
     background-color: transparent;
@@ -33,7 +47,3 @@
     transform: rotate(180deg);
     transition: 0.3s;
 }
-
-// * {
-//     border: solid 1px black;
-// }
