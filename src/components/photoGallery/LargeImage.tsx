@@ -8,7 +8,7 @@ export const LargeImage: React.FunctionComponent<Props> = ({largeImageUrl}) => {
 
 return (
     <div>
-       <img className="main_picture" src={largeImageUrl} alt="lorem picsum" width="100%" />
+       <img className="large-picture" src={largeImageUrl} alt="lorem picsum" width="90%" />
     </div>
 );
 }

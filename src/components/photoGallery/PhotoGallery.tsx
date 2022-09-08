@@ -14,16 +14,13 @@ export const PhotoGallery: React.FunctionComponent = () => {
           const url = `https://api.nasa.gov/planetary/apod?count=50&api_key=DEMO_KEY`;
           
           const fetchData = async () => {
-            try {
+            
               setIsLoading(true);
               const response = await fetch(url);
               const json = await response.json();
               json.forEach((item: {url: string}) => img_urls.push(item.url));  
               setImageUrls(img_urls);
               setIsLoading(false);
-            } catch (error) {
-              console.log("error", error);
-            }
           };
       
           fetchData();
@@ -33,12 +30,12 @@ export const PhotoGallery: React.FunctionComponent = () => {
         return <p>Loading.....</p>
       }
   return (
-      <>
+      <div className="image-container">
         <LargeImage largeImageUrl={largeImageUrl} />
-        <div className = "imageGallery">
+        <div className = "image-gallery">
           {imageUrls?.map(url => <img onClick={ () => {setLargeImageUrl(url);window.scrollTo(0,0)}} 
-            className="spaceImage" src={url} alt = ""/>)}
+            className="space-image" src={url} alt = ""/>)}
         </div>
-      </>
+      </div>
   );
 };

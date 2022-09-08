@@ -1,19 +1,19 @@
-.imageGallery {
+.image-container {
+    display: flex;
+    flex-direction: column;  
+}
+.image-gallery {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
     gap: 10px;
 }
-
-.spaceImage {
-    width: 40%;
-    height: 100px;
-    object-fit: cover;   
+.space-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover; 
 }
-
-@media only screen and (min-width: 320px) {
-    *{
-        border: 2px solid  red
-    }
+.large-picture {
+    padding: 5%;
 }
