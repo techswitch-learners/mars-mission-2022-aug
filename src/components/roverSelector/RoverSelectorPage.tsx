@@ -3,6 +3,7 @@ import "./RoverSelectorPage.scss";
 import opportunityImage from "/images/OpportunityRover.jpg";
 import spiritImage from "/images/SpiritRover.jpg";
 import curiosityImage from "/images/CuriosityRover.jpg";
+import { Link } from "react-router-dom";
 
 export const RoverSelectorPage: React.FunctionComponent = () => {
   const [showInfo, setShowInfo] = useState("");
@@ -46,7 +47,7 @@ export const RoverSelectorPage: React.FunctionComponent = () => {
             That's 0.000074 miles per hour… not fast, although it took a lot of breaks!
           </p>
           <div className="info-buttons">
-            <button>See Spirit's Route</button>
+            <Link to="/rovers/spirit">See Spirit's Route</Link>
             <button className="route-button" onClick={() => setShowInfo("")}>Back</button>
           </div>
         </div>
@@ -73,7 +74,7 @@ export const RoverSelectorPage: React.FunctionComponent = () => {
             It was the first thing built by humans to travel that far on another planet!
           </p>
           <div className="info-buttons">
-            <button>See Opportunity's Route</button>
+            <Link to="/rovers/opportunity">See Opportunity's Route</Link>
             <button className="route-button" onClick={() => setShowInfo("")}>Back</button>
           </div>
         </div>
@@ -99,7 +100,7 @@ export const RoverSelectorPage: React.FunctionComponent = () => {
             It has a top speed of 0.05 miles per hour, it doesn't sound fast but Mars is really rocky!
           </p>
           <div className="info-buttons">
-            <button>See Curiosity's Route</button>
+            <Link to="/rovers/curiosity">See Curiosity's Route</Link>
             <button className="route-button" onClick={() => setShowInfo("")}>Back</button>
           </div>
         </div>
