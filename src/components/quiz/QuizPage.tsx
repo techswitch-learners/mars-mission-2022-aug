@@ -3,21 +3,18 @@ import { QuizQuestions } from "./QuizQuestions";
 import { UserDetailsForm } from "./UserDetailsForm";
 import { Reward } from "./Reward";
 
-interface Stat{
-  userStatus: boolean;
-}
-
 export const QuizPage: React.FunctionComponent = () => {
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
 
-  const [userStatus, setUserStatus] = useState(false);
- 
-  if (userStatus===false) { 
-    return <UserDetailsForm status={userStatus} setStatus={setUserStatus} />;
+  if (isUserLoggedIn === false) {
+    return (
+      <UserDetailsForm
+        isUserLoggedIn={ isUserLoggedIn }
+        setIsUserLoggedIn={ setIsUserLoggedIn }
+      />
+    );
   } else {
-   
-    return <QuizQuestions />
+    return <QuizQuestions />;
   }
-   return <Reward />
-    
-   
+  return <Reward />;
 };

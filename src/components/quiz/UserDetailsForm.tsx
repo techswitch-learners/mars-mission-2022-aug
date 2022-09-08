@@ -1,58 +1,61 @@
 import React, { useState } from "react";
 
 interface User {
-  name: string | null;
-  displayPic: string | null;
+  name?: string;
+  displayPicUrl?: string;
 }
 
-export const UserDetailsForm: React.FunctionComponent = ({status,setStatus}: any) => {
+interface UserDetailsFormProps {
+  isUserLoggedIn: boolean;
+  setIsUserLoggedIn: (isUserLoggedIn: boolean) => void;
+}
 
-  const [userDetails, setUserDetails] = useState<User>({
-    name: null,
-    displayPic:null,
-  });
-  
+export const UserDetailsForm: React.FunctionComponent<UserDetailsFormProps> = ({
+  isUserLoggedIn,
+  setIsUserLoggedIn,
+}) => {
+  const [userDetails, setUserDetails] = useState<User>();
 
-  function onSubmit(event: any) {    
-    event.preventDefault();     
-    setStatus(true);   
-  }
+  const onSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
+    event.preventDefault();
+    setIsUserLoggedIn(true);
+  };
 
   return (
     <div>
-      <h2>Enter your details cadet !</h2>
-   
-      <form action="post">
-        <div className="name">
-          <label> Name: </label>
-          <input
-            name="Name"
-            type="text"
-            onChange={(e) =>
-              setUserDetails({ ...userDetails, name: e.target.value })
-            }
-          />
+      <h2>Enter your details cadet!</h2>
+
+      <form onSubmit={ onSubmit }>
+        <div>
+          <label htmlFor="user-details-form-name">
+            Name:
+            <input
+              id="user-details-form-name"
+              type="text"
+              onChange={(e) =>
+                setUserDetails({ ...userDetails, name: e.target.value })
+              }
+            />
+          </label>
         </div>
 
-        <div className="displayPic">
-          <label> Display pic : </label>
-          <input
-            type="text"           
-            onChange={(e) =>
-              setUserDetails({ ...userDetails, displayPic: e.target.value })
-            }
-          />
+        <div>
+          <label htmlFor="user-details-form-displayPic">
+            Display pic:
+            <input
+              id="user-details-form-displayPic"
+              type="text"
+              onChange={(e) =>
+                setUserDetails({
+                  ...userDetails,
+                  displayPicUrl: e.target.value,
+                })
+              }
+            />
+          </label>
         </div>
 
-        <button
-          type="submit"
-          value="Send"
-          className="submit-button"
-          onClick={(submit) => onSubmit(submit)}
-        >
-          Start Quiz...
-        </button>
-
+        <input type="submit" value="Start Quiz" className="submit-button" />
       </form>
     </div>
   );
