@@ -6,6 +6,7 @@ import { LandingPage } from "./landingPage/LandingPage";
 import { FunFactPage } from "./funFacts/FunFactPage";
 import { RoverSelectorPage } from "./roverSelector/RoverSelectorPage";
 import { QuizPage } from "./quiz/QuizPage";
+import { PhotoGallery } from "./photoGallery/PhotoGallery";
 import { RouteMap } from "./map/RouteMap";
 
 const App: React.FunctionComponent = () => {
@@ -52,6 +53,7 @@ const App: React.FunctionComponent = () => {
           ]}
         />}/>
         <Route path="/quiz" element={<QuizPage />} />
+        <Route path="/photo-gallery" element={<PhotoGallery />} />
       </Routes>
     </>
   );
