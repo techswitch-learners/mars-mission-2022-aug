@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./PhotoGallery.scss";
 import { LargeImage } from "./LargeImage";
 
-interface Apod {
+export interface Apod {
   date: string;
   explanation: string;
   hdurl: string;
@@ -12,17 +12,24 @@ interface Apod {
   url: string;
 }
 
+const firstLargeImage: Apod = {date:"2013-07-13",
+                        explanation:"Reddened rays of the setting Sun flooded the skies over Cedar Creek Lake",
+                        hdurl:"https://apod.nasa.gov/apod/image/1307/Sunspot-06July2013-johunter.jpg",
+                        media_type:"image",
+                        service_version:"v1",
+                        title:"Sunspot at Sunset",
+                        url:"https://apod.nasa.gov/apod/image/1307/Sunspot-06July2013-johunter950.jpg"}
+
 export const PhotoGallery: React.FunctionComponent = () => {
-  const [imageUrls, setImageUrls] = useState<string[]>();
-  const [largeImageUrl, setLargeImageUrl] = useState("https://apod.nasa.gov/apod/image/0201/earthrise_apollo8.jpg");
+  const [imageData, setImageData] = useState<Apod[]>();
+  const [largeImage, setLargeImage] = useState<Apod>(firstLargeImage);
 
   useEffect(() => {
     const url = `https://api.nasa.gov/planetary/apod?count=50&api_key=DEMO_KEY`;
-
     const fetchData = async () => {
-      const response = await fetch(url);
-      const json: Apod[] = await response.json();
-      setImageUrls(json.map((item) => item.url));
+    const response = await fetch(url);
+    const json: Apod[] = await response.json();
+    setImageData(json)
     };
 
     fetchData();
@@ -30,14 +37,14 @@ export const PhotoGallery: React.FunctionComponent = () => {
 
   return (
     <div className="image-container">
-      <LargeImage largeImageUrl={largeImageUrl} />
+      <LargeImage url={largeImage.url} title={largeImage.title} />
       <div className="image-gallery">
         {
-          imageUrls === undefined
+          imageData === undefined
             ? <p>Loading....</p>
-            : imageUrls.map(url => <img
-              onClick={() => { setLargeImageUrl(url); window.scrollTo(0, 0) }}
-              className="space-image" src={url} alt="" />)}
+            : imageData.map(image => <img
+              onClick={() => { setLargeImage(image); window.scrollTo(0, 0) }}
+              className="space-image" src={image.url} alt={image.title} />)}
       </div>
     </div>
   );
