@@ -13,6 +13,7 @@ export const LandingPage: React.FunctionComponent = () => {
         <Link to="/rovers">Explore Mars</Link>
         <Link to="/fun-facts">Learn More</Link>
         <Link to="/quiz">Test Your Knowledge</Link>
+        <Link to="/photo-gallery">Photo Gallery</Link>
       </div>
     </main>
   );

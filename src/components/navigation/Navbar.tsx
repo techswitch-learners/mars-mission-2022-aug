@@ -23,6 +23,7 @@ export const Navbar: React.FunctionComponent = () => {
         <li onClick = {() => toggleMenu()}><Link to="/rovers">Explore Mars</Link></li>
         <li onClick = {() => toggleMenu()}><Link to="/fun-facts">Fun Facts</Link></li>
         <li onClick = {() => toggleMenu()}><Link to="/quiz">Test Your Knowledge</Link></li>
+        <li onClick = {() => toggleMenu()}><Link to="/photo-gallery">Photo Gallery</Link></li>
       </ul>
     </div>
   </nav>;
