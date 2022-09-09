@@ -32,11 +32,12 @@ export const PhotoGallery: React.FunctionComponent = () => {
     <div className="image-container">
       <LargeImage largeImageUrl={largeImageUrl} />
       <div className="image-gallery">
-        {imageUrls === undefined ? (
-          <p>Loading....</p>
-        ) : (
-          imageUrls.map((url) => <img className="space-image" src={url} alt="" />)
-        )}
+        {
+          imageUrls === undefined
+            ? <p>Loading....</p>
+            : imageUrls.map(url => <img
+              onClick={() => { setLargeImageUrl(url); window.scrollTo(0, 0) }}
+              className="space-image" src={url} alt="" />)}
       </div>
     </div>
   );
