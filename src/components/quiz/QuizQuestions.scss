@@ -1,0 +1,68 @@
+@import "../../constants.scss";
+
+
+h1 {
+  color: black;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  text-align: center;
+}
+
+h3 {
+  color: black;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  text-align: left;
+}
+
+p {
+  color: $primary;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 20px;
+  text-align: left;
+}
+
+img {
+  width: 30%;
+  height: 10%;
+}
+
+li {
+  list-style-type: upper-alpha;
+  padding: 2px;
+}
+
+.select-answer {
+  background-color: $primary-light;
+  box-shadow: 0 6px 16px 0 $primary;
+  border-radius: 15px;
+
+  &:active {
+    box-shadow: 0 1px 16px 0 $primary;
+    transform: translateY(5px);
+    background-color: $secondary;
+  }
+}
+
+.quiz-questions {
+  width:85%;
+  margin-top: 30px;;
+  z-index: 3;
+  top: 20px;
+  text-align: left;
+  background: $secondary-light;
+  margin-left: 120px;
+  overflow: auto;
+}
+
+.next-question {
+  background-color: $primary-light;
+  box-shadow: 0 6px 16px 0 $primary;
+  border-radius: 15px;
+
+  &:active {
+    box-shadow: 0 1px 16px 0 $primary;
+    transform: translateY(5px);
+    background-color: $secondary;
+  }
+}

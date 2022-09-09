@@ -6,20 +6,10 @@
   top: 20px;
   left: 20px;
   height:100%;
-  z-index: 1;
+  z-index: 2;
   -webkit-user-select: none;
   user-select: none;
-
-  a {
-    text-decoration: none;
-    color: $white;
-    transition: color 0.3s, underline 0.3s;
-
-    &:hover {
-      color: $black;
-      text-decoration: underline;
-    }
-  }
+  pointer-events: none;
 
   span {
     display: block;
@@ -29,7 +19,7 @@
     position: relative;  
     background: $white;
     border-radius: 3px; 
-    z-index: 1;
+    z-index: 2;
     transform-origin: 4px 0px;
     transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
                 background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
@@ -42,6 +32,7 @@
     z-index: 4;
     border-radius: 2px;
     padding-top: 5px;
+    pointer-events: all;
   }  
 }
 
@@ -84,6 +75,17 @@
     padding: 10px 0;
     font-size: 22px;
   }
+  
+  a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s, underline 0.3s;
+
+    &:hover {
+      color: black;
+      text-decoration: underline;
+    }
+  }
 }
 
 /*
@@ -91,4 +93,5 @@
  */
 .navbar__nav-links--expanded {
   transform: none;
+  pointer-events: all;
 }
