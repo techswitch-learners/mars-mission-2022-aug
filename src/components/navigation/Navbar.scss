@@ -9,17 +9,7 @@
   z-index: 1;
   -webkit-user-select: none;
   user-select: none;
-
-  a {
-    text-decoration: none;
-    color: $white;
-    transition: color 0.3s, underline 0.3s;
-
-    &:hover {
-      color: $black;
-      text-decoration: underline;
-    }
-  }
+  pointer-events: none;
 
   span {
     display: block;
@@ -42,6 +32,7 @@
     z-index: 4;
     border-radius: 2px;
     padding-top: 5px;
+    pointer-events: all;
   }  
 }
 
@@ -84,6 +75,17 @@
     padding: 10px 0;
     font-size: 22px;
   }
+  
+  a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s, underline 0.3s;
+
+    &:hover {
+      color: black;
+      text-decoration: underline;
+    }
+  }
 }
 
 /*
@@ -91,4 +93,5 @@
  */
 .navbar__nav-links--expanded {
   transform: none;
+  pointer-events: all;
 }
