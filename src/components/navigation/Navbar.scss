@@ -64,7 +64,6 @@
   padding-top: 125px;
   height:100%;
   background: $secondary;
-  list-style-type: none;
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
   transform-origin: 0% 0%;
@@ -74,6 +73,7 @@
   li {
     padding: 10px 0;
     font-size: 22px;
+    list-style-type: none;
   }
   
   a {
