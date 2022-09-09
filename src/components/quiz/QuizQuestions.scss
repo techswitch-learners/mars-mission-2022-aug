@@ -1,0 +1,47 @@
+@import "../../constants.scss";
+
+*{  box-sizing: border-box;
+  background-color:$secondary-light;
+}  
+
+h1{
+  color: black;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  text-align: center;
+}
+h3{
+   color: black;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  text-align: left;
+}
+p{
+  color: $primary;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 20px;
+  text-align: left;
+}
+img{
+  width:40%;
+  height:25%;
+}
+li{
+  list-style-type: upper-alpha;
+  padding:2px;
+}
+.select-answer{
+  background-color: $primary-light;
+  box-shadow: 0 15px 20px ;
+}
+.quiz-questions{
+    z-index: 3;
+    top: 20px;
+    text-align: left;
+    background:$secondary-light;
+    margin-left: 60px;
+}
+.next-question{
+    background-color: $primary-light;
+    box-shadow: 0 15px 20px ;
+}

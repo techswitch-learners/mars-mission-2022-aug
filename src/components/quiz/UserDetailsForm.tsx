@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './UserDetailsForm.scss';
 
 interface User {
   name?: string;
@@ -8,13 +9,14 @@ interface User {
 interface UserDetailsFormProps {
   isUserLoggedIn: boolean;
   setIsUserLoggedIn: (isUserLoggedIn: boolean) => void;
+  setUserDetails: (setUserDetails: User) => void; 
 }
 
 export const UserDetailsForm: React.FunctionComponent<UserDetailsFormProps> = ({
   isUserLoggedIn,
-  setIsUserLoggedIn,
+  setIsUserLoggedIn,setUserDetails
 }) => {
-  const [userDetails, setUserDetails] = useState<User>();
+  
 
   const onSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
@@ -22,18 +24,18 @@ export const UserDetailsForm: React.FunctionComponent<UserDetailsFormProps> = ({
   };
 
   return (
-    <div>
+    <div className="userDetails">
       <h2>Enter your details cadet!</h2>
 
       <form onSubmit={ onSubmit }>
         <div>
           <label htmlFor="user-details-form-name">
             Name:
-            <input
+            <input 
               id="user-details-form-name"
               type="text"
               onChange={(e) =>
-                setUserDetails({ ...userDetails, name: e.target.value })
+                setUserDetails({ name: e.target.value })
               }
             />
           </label>
@@ -47,7 +49,6 @@ export const UserDetailsForm: React.FunctionComponent<UserDetailsFormProps> = ({
               type="text"
               onChange={(e) =>
                 setUserDetails({
-                  ...userDetails,
                   displayPicUrl: e.target.value,
                 })
               }

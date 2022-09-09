@@ -1,0 +1,39 @@
+@import "../../constants.scss";
+*{
+  box-sizing: border-box;
+}
+.reward-for-user{
+  width:80%;
+  padding:75px 30px;
+  border: 2px $secondary;
+  margin-top:200px;
+  z-index: 3;
+  left: 20px;
+  background:$primary;
+  position: relative;
+}
+.user-image{
+  width:125px;
+  height:125px;
+  position: absolute;
+  top:12.5px;
+  left:20px;
+}
+.reward-card-print{
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  position: absolute;
+  bottom: 10px;
+  left:200px;
+  background-color:$primary;
+}
+.user-name{
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 30px;
+  position: absolute;
+  top:30px;
+  left:200px;
+  background-color:$primary;
+}
