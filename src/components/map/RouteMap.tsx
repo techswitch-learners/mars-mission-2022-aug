@@ -15,6 +15,24 @@ interface RouteMapProps {
   pois: PoiLocation[];
 }
 
+interface CameraResponse {
+  id: number;
+  name: string;
+  rover_id: number;
+  full_name: string;
+}
+
+interface PhotoResponse {
+  id: number;
+  sol: number;
+  camera: CameraResponse
+  img_src: string;
+}
+
+interface PhotoApiResponse {
+  photos: PhotoResponse[];
+}
+
 export const RouteMap: React.FunctionComponent<RouteMapProps> = ({
   roverName,
   mapImageUrl,
@@ -25,14 +43,16 @@ export const RouteMap: React.FunctionComponent<RouteMapProps> = ({
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/${roverName}/photos?sol=${sol}&camera=fhaz&api_key=5j3Pvrt0HVQ1PXgmycftrPgdMFA9g0z4NxEBe3dd`;
+    const camera = roverName === "Curiosity" ? "MAST" : "PANCAM"
+    const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/${roverName}/photos?sol=${sol}&api_key=5j3Pvrt0HVQ1PXgmycftrPgdMFA9g0z4NxEBe3dd`
 
     const fetchData = async () => {
       try {
         setIsLoading(true)
         const response = await fetch(url);
-        const json = await response.json();
-        setPhotosUrls(json.photos);
+        const json: PhotoApiResponse = await response.json();
+        const photos = json.photos;
+        setPhotosUrls(photos.map(x => x.img_src));
         setIsLoading(false);
       } catch (error) {
         console.log("error", error);
@@ -48,8 +68,8 @@ export const RouteMap: React.FunctionComponent<RouteMapProps> = ({
   if (sol === undefined) {
     imageOrMap = <>
       <div className="map">
-        <img src={mapImageUrl} alt={roverName} />;
-        {pois.map((poi) => <RoutePoiButton x={poi.x} y={poi.y} sol={poi.sol} setSol={setSol} />)};
+        <img src={mapImageUrl} alt={roverName}/>
+        {pois.map((poi) => <RoutePoiButton key={poi.sol} x={poi.x} y={poi.y} sol={poi.sol} setSol={setSol} />)}
       </div>
     </>
   } else {
@@ -60,17 +80,21 @@ export const RouteMap: React.FunctionComponent<RouteMapProps> = ({
         onClick={() => {
           setSol(undefined);
         }}>X</button>
-        {photoUrls.slice(0,1).map(photo => <img
-          src={photo.img_src}
-          alt={`Sol ${sol}`}
-        />)}
+        <div className="image-display">
+          {photoUrls.slice(0, 30).map(photo => 
+            <img 
+              className="mars-image"
+              src={photo}
+              alt={`Sol ${sol}`}
+            />)}
+        </div>
       </div>
-    </>;
+    </>
   }
-
+  
   return (
     <main>
-      {imageOrMap};
+      {imageOrMap}
     </main>
   );
 };
