@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from "react";
 import "./PhotoGallery.scss";
 
+interface Apod {
+  date: string;
+  explanation: string;
+  hdurl: string;
+  media_type: string;
+  service_version: string;
+  title: string;
+  url: string;
+}
+
 export const PhotoGallery: React.FunctionComponent = () => {
   const [imageUrls, setImageUrls] = useState<string[]>();
 
@@ -9,7 +19,7 @@ export const PhotoGallery: React.FunctionComponent = () => {
 
     const fetchData = async () => {
       const response = await fetch(url);
-      const json = await response.json();
+      const json: Apod[] = await response.json();
       setImageUrls(json.map((item) => item.url));
     };
 
