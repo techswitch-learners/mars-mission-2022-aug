@@ -13,7 +13,7 @@ export const Navbar: React.FunctionComponent = () => {
 
   return <nav>
     <div className="navbar">
-      <button onClick = {() => toggleMenu()}>
+      <button onClick = {() => toggleMenu() } className = {`${isExpanded ? "navbar__button--expanded": ""}`}>
         <span className = {`navbar__span-one ${isExpanded ? "navbar__burger--expanded" : ""}`}></span>
         <span className = {`navbar__span-two ${isExpanded ? "navbar__burger--expanded" : ""}`}></span>
         <span className = {`navbar__span-three ${isExpanded ? "navbar__burger--expanded" : ""}`}></span>

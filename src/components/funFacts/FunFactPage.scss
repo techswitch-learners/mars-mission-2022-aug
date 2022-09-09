@@ -1,0 +1,51 @@
+@import "../../constants.scss";
+
+h1 {
+  padding-left: 80px;
+  margin-top: 14px;
+}
+
+.fun-fact {
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px;
+  background-color: $primary;
+}
+
+.fun-fact__prompt {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.fun-fact__prompt-question {
+  font-size: 18px;
+  width: 80%;
+  margin-top: 0;
+  margin-bottom: 0;
+  transition: 0.3s;
+}
+
+.fun-fact__detail {
+  width: 80%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: justify;
+}
+
+.fun-fact__button {
+  margin-right: 20px;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+  transition: 0.3s;
+}
+
+.fun-fact__button--revealed {
+  border: none;
+  background-color: transparent;
+  transform: rotate(180deg);
+  transition: 0.3s;
+}
