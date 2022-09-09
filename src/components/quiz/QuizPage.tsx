@@ -6,10 +6,10 @@ import { Reward } from "./Reward";
 
 export const QuizPage: React.FunctionComponent = () => {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
-  const [score,setScore] = useState<number>(0);
-  const [isEndOfQuestion, setIsEndOfQuestion] = useState(false);
+  const [score, setScore] = useState(0);
+  const [hasCompletedQuiz, sethasCompletedQuiz] = useState(false);
  
-  if (isUserLoggedIn === false) {
+  if (!isUserLoggedIn) {
     return (
       <UserDetailsForm
         isUserLoggedIn={isUserLoggedIn}
@@ -21,14 +21,8 @@ export const QuizPage: React.FunctionComponent = () => {
       questions={questions}
       score={score}
       setScore={setScore}
-      isEndOfQuestion={isEndOfQuestion}
-      setIsEndOfQuestion={setIsEndOfQuestion}
+      hasCompletedQuiz={hasCompletedQuiz}
+      setHasCompletedQuiz={sethasCompletedQuiz}
     />);
   }  
 };
-
-
-
-
-
-    

@@ -1,15 +1,13 @@
 @import "../../constants.scss";
-*{
-  box-sizing: border-box;
-  background-color:$secondary-light;
-}
-h2{
-  color: White;
+
+h2 {
+  color: white;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
   text-align: center;
 }
-  .userDetails {
+
+.userDetails {
     padding:150px;
     z-index: 3;
     top: 20px;
@@ -17,8 +15,9 @@ h2{
     text-align: left;
     background:$secondary-light;
     color:Black;
-  }
-  .submit-button{
+}
+
+.submit-button {
     background-color: $primary-light;
     box-shadow: 0 15px 20px ;
   }

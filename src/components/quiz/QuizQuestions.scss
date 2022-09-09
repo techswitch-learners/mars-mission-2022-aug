@@ -1,60 +1,68 @@
 @import "../../constants.scss";
 
-*{  box-sizing: border-box;
-  background-color:$secondary-light;
-}  
 
-h1{
+h1 {
   color: black;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-weight: bold;
   text-align: center;
 }
-h3{
-   color: black;
-  font-family: 'Courier New', Courier, monospace;
+
+h3 {
+  color: black;
+  font-family: "Courier New", Courier, monospace;
   font-weight: bold;
   text-align: left;
 }
-p{
+
+p {
   color: $primary;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-weight: 20px;
   text-align: left;
 }
-img{
+
+img {
   width: 30%;
-  height:10%;
+  height: 10%;
 }
-li{
+
+li {
   list-style-type: upper-alpha;
-  padding:2px;
+  padding: 2px;
 }
-.select-answer{
+
+.select-answer {
   background-color: $primary-light;
   box-shadow: 0 6px 16px 0 $primary;
   border-radius: 15px;
+
+  &:active {
+    box-shadow: 0 1px 16px 0 $primary;
+    transform: translateY(5px);
+    background-color: $secondary;
+  }
 }
-.select-answer:active{
-  box-shadow: 0 1px 16px 0 $primary;
-  transform: translateY(5px);
-  background-color: $secondary;
+
+.quiz-questions {
+  width:85%;
+  margin-top: 30px;;
+  z-index: 3;
+  top: 20px;
+  text-align: left;
+  background: $secondary-light;
+  margin-left: 120px;
+  overflow: auto;
 }
-.quiz-questions{
-    z-index: 3;
-    top: 20px;
-    text-align: left;
-    background:$secondary-light;
-    margin-left: 60px;
-    overflow: auto;
-}
-.next-question{
-    background-color: $primary-light;
-    box-shadow: 0 6px 16px 0 $primary;
-    border-radius: 15px;
-}
-.next-question:active{
-  box-shadow: 0 1px 16px 0 $primary;
-  transform: translateY(5px);
-  background-color: $secondary;
+
+.next-question {
+  background-color: $primary-light;
+  box-shadow: 0 6px 16px 0 $primary;
+  border-radius: 15px;
+
+  &:active {
+    box-shadow: 0 1px 16px 0 $primary;
+    transform: translateY(5px);
+    background-color: $secondary;
+  }
 }

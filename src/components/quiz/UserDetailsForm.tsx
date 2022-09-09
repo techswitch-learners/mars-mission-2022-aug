@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './UserDetailsForm.scss';
+import "./UserDetailsForm.scss";
 
 interface User {
   name?: string;
