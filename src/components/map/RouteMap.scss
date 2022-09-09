@@ -1,9 +1,11 @@
+.map-container{
+  display: flex;
+  justify-content: center;
+}
+
 .map {
   position: relative;
-
-  .spirit-map{
-    transform: rotate(90deg)
-  }
+  max-width: 600px;
 
   img {
     padding: 5%;
@@ -11,7 +13,6 @@
     width: 90%;
   }
 }
-
 
 .image-display {
   position: relative;

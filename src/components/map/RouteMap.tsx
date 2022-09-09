@@ -66,12 +66,12 @@ export const RouteMap: React.FunctionComponent<RouteMapProps> = ({
   if(isLoading) return <p>Loading....</p>;
 
   if (sol === undefined) {
-    imageOrMap = <>
+    imageOrMap = <div className="map-container">
       <div className="map">
         <img src={mapImageUrl} alt={roverName}/>
         {pois.map((poi) => <RoutePoiButton key={poi.sol} x={poi.x} y={poi.y} sol={poi.sol} setSol={setSol} />)}
       </div>
-    </>
+    </div>
   } else {
     imageOrMap = <>
       <div className="image-display">
