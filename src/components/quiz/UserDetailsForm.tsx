@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./UserDetailsForm.scss";
 
 interface User {
   name?: string;
@@ -22,14 +23,14 @@ export const UserDetailsForm: React.FunctionComponent<UserDetailsFormProps> = ({
   };
 
   return (
-    <div>
+    <div className="userDetails">
       <h2>Enter your details cadet!</h2>
 
       <form onSubmit={ onSubmit }>
         <div>
           <label htmlFor="user-details-form-name">
             Name:
-            <input
+            <input 
               id="user-details-form-name"
               type="text"
               onChange={(e) =>
