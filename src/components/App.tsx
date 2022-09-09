@@ -20,7 +20,7 @@ const App: React.FunctionComponent = () => {
         <Route path="/rovers" element={<RoverSelectorPage />}/>
         <Route path="/rovers/curiosity" element={<RouteMap
           roverName="Curiosity"
-          mapImageUrl="/images/routes/curiosity-route-mobile.png"
+          mapImageUrl="/images/routes/curiosity-route-mobile.jpg"
           pois={[
             { x: 0.45, y: 0.09, sol: 2},
             { x: 0.24, y: 0.38, sol: 502},
@@ -31,7 +31,7 @@ const App: React.FunctionComponent = () => {
         />}/>
         <Route path="/rovers/spirit" element={<RouteMap
           roverName="Spirit"
-          mapImageUrl="/images/routes/spirit-route.png"
+          mapImageUrl="/images/routes/spirit-route.jpg"
           pois={[
             { x: 0.25, y: 0.07, sol: 1},
             { x: 0.51, y: 0.08, sol: 73},
@@ -43,7 +43,7 @@ const App: React.FunctionComponent = () => {
         />}/>
         <Route path="/rovers/opportunity" element={<RouteMap
           roverName="Opportunity"
-          mapImageUrl="https://planetary.s3.amazonaws.com/web/assets/pictures/opportunity_traverse_map_ctx_hrsc_cowart.jpg"
+          mapImageUrl="/images/routes/opportunity_traverse_map_ctx_hrsc_cowart.jpg"
           pois={[
             { x: 0.21, y: 0.16, sol: 1},
             { x: 0.4, y: 0.33, sol: 1486},
