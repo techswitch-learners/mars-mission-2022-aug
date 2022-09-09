@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Question } from "./questions";
 import { UserDetailsForm } from "./UserDetailsForm";
+import './QuizQuestions.scss';
 
 interface QuizQuestionsProps {
    questions: Question[];
@@ -43,7 +44,7 @@ export const QuizQuestions: React.FunctionComponent<QuizQuestionsProps> = ({
       <div className="quiz-questions">
         <h3>{message}</h3>
         <p>{activeQuestion.answerDetailsText}</p>
-          <button onClick={() => { moveToNextQuestion() }} >NextQuestion </button>         
+          <button className="next-question" onClick={() => { moveToNextQuestion() }} >NextQuestion </button>         
       </div>
       )
     }

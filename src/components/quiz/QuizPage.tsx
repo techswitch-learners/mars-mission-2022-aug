@@ -3,7 +3,6 @@ import { QuizQuestions } from "./QuizQuestions";
 import { UserDetailsForm } from "./UserDetailsForm";
 import { questions } from "./questions";
 import { Reward } from "./Reward";
-import './QuizQuestions.scss';
 
 export const QuizPage: React.FunctionComponent = () => {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
