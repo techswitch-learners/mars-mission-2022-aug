@@ -1,35 +1,37 @@
 @import "../../constants.scss";
 
 
-h1 {
-  color: black;
-  font-family: "Courier New", Courier, monospace;
-  font-weight: bold;
-  text-align: center;
-}
+.quiz-questions {
+  h1 {
+    color: black;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+    text-align: center;
+  }
 
-h3 {
-  color: black;
-  font-family: "Courier New", Courier, monospace;
-  font-weight: bold;
-  text-align: left;
-}
+  h3 {
+    color: black;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+    text-align: left;
+  }
 
-p {
-  color: $primary;
-  font-family: "Courier New", Courier, monospace;
-  font-weight: 20px;
-  text-align: left;
-}
+  p {
+    color: $primary;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 20px;
+    text-align: left;
+  }
 
-img {
-  width: 30%;
-  height: 10%;
-}
+  img {
+    width: 30%;
+    height: 10%;
+  }
 
-li {
-  list-style-type: upper-alpha;
-  padding: 2px;
+  li {
+    list-style-type: upper-alpha;
+    padding: 2px;
+  }
 }
 
 .select-answer {
