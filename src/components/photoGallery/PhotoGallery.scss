@@ -1,3 +1,8 @@
+.image-container {
+    display: flex;
+    flex-direction: column;
+}
+
 .image-gallery {
     display: flex;
     flex-wrap: wrap;
@@ -9,5 +14,10 @@
 .space-image {
     width: 200px;
     height: 200px;
-    object-fit: cover; 
+    object-fit: cover;
+}
+
+.large-picture {
+    width: 90%;
+    padding: 5%;
 }
