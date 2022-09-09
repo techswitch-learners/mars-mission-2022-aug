@@ -4,7 +4,7 @@ import { LargeImage } from "./LargeImage";
 
 export const PhotoGallery: React.FunctionComponent = () => {
   const [imageUrls, setImageUrls] = useState<string[]>();
-  const [largeImageUrl, setLargeImageUrl] = useState<string>("https://apod.nasa.gov/apod/image/0201/earthrise_apollo8.jpg");
+  const [largeImageUrl, setLargeImageUrl] = useState("https://apod.nasa.gov/apod/image/0201/earthrise_apollo8.jpg");
 
   useEffect(() => {
     const url = `https://api.nasa.gov/planetary/apod?count=50&api_key=DEMO_KEY`;

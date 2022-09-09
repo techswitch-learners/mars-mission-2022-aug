@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
 
-interface Props {
-  largeImageUrl: string
+interface LargeImageProps {
+  largeImageUrl: string;
 }
 
-export const LargeImage: React.FunctionComponent<Props> = ({ largeImageUrl }) => {
+export const LargeImage: React.FunctionComponent<LargeImageProps> = ({ largeImageUrl }) => {
   return (
     <div>
-      <img className="large-picture" src={largeImageUrl} alt="lorem picsum" width="90%" />
+      <img className="large-picture" src={largeImageUrl} alt="Large Picture" width="90%" />
     </div>
   );
 }
