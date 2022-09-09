@@ -84,5 +84,6 @@ export const QuizQuestions: React.FunctionComponent<QuizQuestionsProps> = ({
     );
   } else {
     setHasCompletedQuiz(true);
+    return <></>
   }
 };
